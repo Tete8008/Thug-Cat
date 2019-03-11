@@ -16,7 +16,10 @@ public class CatModel : MonoBehaviour
     {
         if (other.CompareTag("Prop"))
         {
-            other.transform.parent.parent.GetComponent<PropBehaviour>().Move(cat.catData.pushPower);
+            PropBehaviour prop = other.transform.parent.parent.GetComponent<PropBehaviour>();
+
+            Vector3 direction = (prop.self.position - cat.self.position).normalized;
+            other.transform.parent.parent.GetComponent<PropBehaviour>().Push(direction*cat.pushStrength);
         }
     }
 

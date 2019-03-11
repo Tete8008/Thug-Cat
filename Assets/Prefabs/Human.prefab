@@ -326,6 +326,7 @@ MonoBehaviour:
   - {fileID: 1053180556876672108}
   - {fileID: 4148938612454571893}
   - {fileID: 4177867114850691320}
+  moveSpeed: 1
 --- !u!1 &7636273189538743373
 GameObject:
   m_ObjectHideFlags: 0

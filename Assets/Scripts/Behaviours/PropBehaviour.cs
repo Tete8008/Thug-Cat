@@ -7,19 +7,8 @@ public class PropBehaviour : MonoBehaviour
     public Transform self;
     public Rigidbody rigidBody;
 
-    [System.NonSerialized] public PropData propData;
-
-    private GameObject propModel;
-
-    public void Init(PropData propData)
+    public void Push(Vector3 forceVector)
     {
-        this.propData = propData;
+        rigidBody.AddForce(forceVector, ForceMode.Impulse);
     }
-
-    public void Move(float catPower)
-    {
-        rigidBody.AddForce(new Vector3(catPower / propData.weight, 0, 0), ForceMode.Impulse);
-        //self.Translate(new Vector3(catPower/propData.weight, 0, 0));
-    }
-
 }

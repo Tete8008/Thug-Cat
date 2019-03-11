@@ -6,7 +6,6 @@ public class CatManager : Singleton<CatManager>
 {
     public GameObject catPrefab;
 
-    public CatData catData;
 
     public Vector3 catSpawnPosition;
     public Vector3 catSpawnRotation;
@@ -24,6 +23,5 @@ public class CatManager : Singleton<CatManager>
     public void SpawnCat()
     {
         cat= Instantiate(catPrefab,catSpawnPosition,Quaternion.Euler(catSpawnRotation)).GetComponent<CatBehaviour>();
-        cat.Init(catData);
     }
 }

@@ -4,85 +4,31 @@ using UnityEngine;
 
 public class HumanBehaviour : MonoBehaviour
 {
-    [System.NonSerialized] public HumanData humanData;
-
     public Transform self;
     public List<MeshRenderer> meshRenderers;
 
-    private float timeLeftBeforeShowUp;
-    private bool startingToShowUp = false;
+    public float moveSpeed;
+    private float startAngle;
+    private float time;
 
-    public void Init(HumanData humanData)
-    {
-        this.humanData = humanData;
-        ResetTimeLeft();
-        for (int i = 00; i < meshRenderers.Count; i++)
-        {
-            meshRenderers[i].enabled = false;
-        }
-        
-        startingToShowUp = false;
-    }
+    private float actualRadius;
 
-    private void ResetTimeLeft()
+    private void Start()
     {
-        timeLeftBeforeShowUp = Random.Range(humanData.spawnDelay.x, humanData.spawnDelay.y);
+        startAngle = Random.Range(0, Mathf.PI * 2);
+        actualRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x/2 * TableBehaviour.instance.meshFilter.transform.localScale.x+TableBehaviour.instance.humansDistanceFromTable;
+        self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle), 0, Mathf.Sin(startAngle))*actualRadius;
     }
 
 
     private void Update()
     {
-        if (startingToShowUp) { return; }
+        time += Time.deltaTime;
 
-        if (timeLeftBeforeShowUp > 0)
+        if (time * moveSpeed >= Mathf.PI * 2)
         {
-            timeLeftBeforeShowUp -= Time.deltaTime;
+            time -= Mathf.PI * 2 / moveSpeed;
         }
-        else
-        {
-            startingToShowUp = true;
-            StartShowingUp();
-        }
+        self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle+time*moveSpeed), 0, Mathf.Sin(startAngle+time * moveSpeed)) * actualRadius;
     }
-
-    private void StartShowingUp()
-    {
-        if (HumanManager.instance.humansPresentCount < HumanManager.instance.humanMaxCountAtSameTime)
-        {
-            for (int i = 00; i < meshRenderers.Count; i++)
-            {
-                meshRenderers[i].enabled = true;
-                meshRenderers[i].shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
-            }
-            
-            StartCoroutine(ShowUp());
-        }
-        
-    }
-
-    private IEnumerator ShowUp()
-    {
-        yield return new WaitForSeconds(humanData.timeToShowUpAfterWarning);
-        for (int i = 00; i < meshRenderers.Count; i++)
-        {
-            meshRenderers[i].shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-        }
-        HumanManager.instance.humansPresentCount++;
-        StartCoroutine(GoAway());
-    }
-
-
-    private IEnumerator GoAway()
-    {
-        yield return new WaitForSeconds(Random.Range(humanData.presenceDuration.x,humanData.presenceDuration.y));
-        for (int i = 00; i < meshRenderers.Count; i++)
-        {
-            meshRenderers[i].enabled = false;
-        }
-        HumanManager.instance.humansPresentCount--;
-        startingToShowUp = false;
-        ResetTimeLeft();
-    }
-
-
 }

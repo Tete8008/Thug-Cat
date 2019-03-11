@@ -4,41 +4,34 @@ using UnityEngine;
 
 public class HumanManager : Singleton<HumanManager>
 {
-    public GameObject humanPrefab;
-
-    public List<Vector3> humanSpawnPoints;
-
-    [System.NonSerialized] public int humansPresentCount;
-
-    public int humanMaxCountAtSameTime;
-
-    public List<HumanData> humanDatas;
-
-
+    public List<GameObject> humanPrefabs;
     private List<HumanBehaviour> activeHumans;
+
+    public int humanCount;
 
 
     public void Init()
     {
-        humansPresentCount = 0;
         activeHumans = new List<HumanBehaviour>();
-        SpawnRandomHuman();
+        for (int i = 0; i < humanCount; i++)
+        {
+            SpawnRandomHuman();
+        }
+        
     }
 
-    public void SpawnHuman(HumanData humanData)
+    public void SpawnHuman(GameObject go)
     {
-        HumanBehaviour human = Instantiate(humanPrefab).GetComponent<HumanBehaviour>();
-        human.self.position = humanSpawnPoints[Random.Range(0, humanSpawnPoints.Count)];
-        human.Init(humanData);
+        HumanBehaviour human = Instantiate(go).GetComponent<HumanBehaviour>();
         activeHumans.Add(human);
     }
 
     public void SpawnRandomHuman()
     {
-        if (humanDatas.Count > 0)
+        if (humanPrefabs.Count > 0)
         {
-            int index = Random.Range(0, humanDatas.Count);
-            SpawnHuman(humanDatas[index]);
+            int index = Random.Range(0, humanPrefabs.Count);
+            SpawnHuman(humanPrefabs[index]);
         }
         else
         {

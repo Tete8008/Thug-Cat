@@ -9,14 +9,11 @@ public class PropManager : Singleton<PropManager>
 
     [System.NonSerialized] public PropBehaviour activeProp;
 
-    public GameObject propPrefab;
-
-    public Vector3 propSpawnPoint;
+    public List<Vector3> propSpawnPoints;
 
     //private bool pushing;
 
-    public List<PropData> propDatas;
-
+    public List<GameObject> propPrefabs;
 
 
 
@@ -29,14 +26,14 @@ public class PropManager : Singleton<PropManager>
 
     public void SpawnRandomProp()
     {
-        if (propDatas.Count > 0)
+        if (propPrefabs.Count > 0)
         {
-            int index = Random.Range(0, propDatas.Count);
-            SpawnProp(propDatas[index]);
+            int index = Random.Range(0, propPrefabs.Count);
+            SpawnProp(propPrefabs[index]);
         }
         else
         {
-            Debug.LogWarning("no prop datas linked");
+            Debug.LogWarning("no prop prefab linked");
             return;
         }
 
@@ -44,11 +41,9 @@ public class PropManager : Singleton<PropManager>
         
     }
 
-    public void SpawnProp(PropData propData)
+    public void SpawnProp(GameObject go)
     {
-        activeProp=Instantiate(propPrefab, propSpawnPoint, Quaternion.identity).GetComponent<PropBehaviour>();
-        activeProp.Init(propData);
-        
+        //activeProp=Instantiate(go, propSpawnPoint, Quaternion.identity).GetComponent<PropBehaviour>();
     }
 
 
@@ -56,11 +51,7 @@ public class PropManager : Singleton<PropManager>
     {
         
         CatManager.instance.cat.PushProp();
-        if (HumanManager.instance.humansPresentCount > 0)
-        {
-            UIManager.instance.DisplayLosePanel();
-            Debug.Log("You lose");
-        }
+        
         
     }
 

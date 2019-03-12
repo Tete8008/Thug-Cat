@@ -59,10 +59,11 @@ public class PropManager : Singleton<PropManager>
     {
         propsPushed++;
         UIManager.instance.RefreshPropsPushedCount();
-        Destroy(prop.rigidBody.gameObject);
-        Instantiate(prop.brokenProp,prop.self.position,prop.self.rotation);
+        
+        GameObject fragments=Instantiate(prop.brokenProp,prop.self.position,prop.self.rotation);
+        fragments.transform.localScale = prop.self.localScale;
 
-
+        Destroy(prop.gameObject);
         //SpawnRandomProp();
         
     }

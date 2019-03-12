@@ -45,8 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catPrefab: {fileID: 4882737291751529309, guid: a8621725976dbe948b98c5ddb0333820,
     type: 3}
-  catData: {fileID: 11400000, guid: b5a2506b3ead0ce45bdf2c4534429e35, type: 2}
-  catSpawnPosition: {x: 0, y: 1.14, z: 0}
+  catSpawnPosition: {x: 0, y: 5.38, z: 0}
   catSpawnRotation: {x: 0, y: -90, z: 0}
   catAnimatorController: {fileID: 9100000, guid: 93cdd50def8b4ae479b40de34a61cfd3,
     type: 2}

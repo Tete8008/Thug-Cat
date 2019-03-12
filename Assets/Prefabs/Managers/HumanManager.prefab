@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   humanPrefabs:
-  - {fileID: 7636273188360745213, guid: 4d8ee30b92288554a921b4aa0f7938cc, type: 3}
+  - {fileID: 7187352821200318982, guid: a9eb98f4d6f42c74c9ce9b4a68c4d3dd, type: 3}
   humanCount: 1
+  hoomanLayers:
+  - {fileID: 11400000, guid: 0c9b204c6e5c01e42ab3d27bddc77e0f, type: 2}

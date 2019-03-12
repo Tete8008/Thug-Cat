@@ -6,6 +6,7 @@ public class PropBehaviour : MonoBehaviour
 {
     public Transform self;
     public Rigidbody rigidBody;
+    public MeshRenderer meshRenderer;
 
     public GameObject brokenProp;
 

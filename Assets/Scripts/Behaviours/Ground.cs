@@ -17,7 +17,7 @@ public class Ground : MonoBehaviour
     {
         if (collision.collider.CompareTag("Prop"))
         {
-            PropBehaviour prop = collision.collider.transform.parent.parent.GetComponent<PropBehaviour>();
+            PropBehaviour prop = collision.collider.GetComponent<PropBehaviour>();
 
             PropManager.instance.PropFallen(prop);
         }

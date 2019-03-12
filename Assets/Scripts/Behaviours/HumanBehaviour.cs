@@ -5,20 +5,96 @@ using UnityEngine;
 public class HumanBehaviour : MonoBehaviour
 {
     public Transform self;
-    public List<MeshRenderer> meshRenderers;
+    public SkinnedMeshRenderer meshRenderer;
+    public Animator animator;
 
     public float moveSpeed;
     private float startAngle;
     private float time;
 
     private float actualRadius;
+    private HumanPath humanPath;
+
+    private List<Vector3> realPathPoints;
+    private float pathIndex;
 
     private void Start()
+    {
+        
+    }
+
+
+    public void Init(HumanPath humanPath)
+    {
+        self.transform.position = new Vector3(humanPath.points[0].x,0, humanPath.points[0].y);
+        this.humanPath = humanPath;
+        realPathPoints = new List<Vector3>();
+        for (int j = 0; j < humanPath.points.Count; j++)
+        {
+            for (int i = 0; i <= humanPath.bezierDivisions; i++)
+            {
+                float t = i / (float)humanPath.bezierDivisions;
+                Vector3 point;
+                if (j < humanPath.points.Count - 1)
+                {
+
+                    point = CalculateCubicBezierPoint(t, new Vector3(humanPath.points[j].x,0,humanPath.points[j].y), new Vector3(humanPath.bezierHandleBeforePoints[j].x,0, humanPath.bezierHandleBeforePoints[j].y), new Vector3(humanPath.bezierHandleAfterPoints[j].x,0, humanPath.bezierHandleAfterPoints[j].y), new Vector3(humanPath.points[j + 1].x,0, humanPath.points[j + 1].y));
+                }
+                else
+                {
+                    point = CalculateCubicBezierPoint(t, new Vector3(humanPath.points[j].x,0,humanPath.points[j].y), new Vector3(humanPath.bezierHandleBeforePoints[j].x,0, humanPath.bezierHandleBeforePoints[j].y), new Vector3(humanPath.bezierHandleAfterPoints[j].x,0, humanPath.bezierHandleAfterPoints[j].y), new Vector3(humanPath.points[0].x,0, humanPath.points[0].y));
+
+                }
+                realPathPoints.Add(point);
+            }
+        }
+
+        Vector3 lastPoint=Vector3.up;
+        for (int i = 0; i < realPathPoints.Count; i++)
+        {
+            if (realPathPoints[i] == lastPoint)
+            {
+                print("doublon removed");
+                realPathPoints.RemoveAt(i);
+                i--;
+                continue;
+            }
+            lastPoint = realPathPoints[i];
+        }
+
+        realPathPoints.RemoveAt(realPathPoints.Count - 1);
+
+    }
+
+
+
+        
+    
+
+    Vector3 CalculateCubicBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3)
+    {
+        float u = 1 - t;
+        float tt = t * t;
+        float uu = u * u;
+        float uuu = uu * u;
+        float ttt = tt * t;
+
+        Vector3 p = uuu * p0;
+        p += 3 * uu * t * p1;
+        p += 3 * u * tt * p2;
+        p += ttt * p3;
+
+        return p;
+    }
+
+
+
+
+    /*private void Start()
     {
         startAngle = Random.Range(0, Mathf.PI * 2);
         
         actualRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x / 2 * TableBehaviour.instance.meshFilter.transform.localScale.x + TableBehaviour.instance.humansDistanceFromTable;
-        print("human" + actualRadius) ;
         self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle), 0, Mathf.Sin(startAngle))*actualRadius;
     }
 
@@ -32,5 +108,26 @@ public class HumanBehaviour : MonoBehaviour
             time -= Mathf.PI * 2 / moveSpeed;
         }
         self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle+time*moveSpeed), 0, Mathf.Sin(startAngle+time * moveSpeed)) * actualRadius;
+    }*/
+
+
+    private void Update()
+    {
+        pathIndex += Time.deltaTime*moveSpeed;
+        if ((int)pathIndex>=realPathPoints.Count)
+        {
+            time =0;
+            pathIndex = 0;
+        }
+
+        if ((int)pathIndex < realPathPoints.Count - 1)
+        {
+            self.position = Vector3.Lerp(realPathPoints[(int)pathIndex], realPathPoints[(int)pathIndex + 1], pathIndex - (int)pathIndex);
+        }
+        else
+        {
+            self.position = Vector3.Lerp(realPathPoints[(int)pathIndex], realPathPoints[0], pathIndex - (int)pathIndex);
+        }
+        
     }
 }

@@ -152,6 +152,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4885191034836725275}
   - component: {fileID: 1490174552866382477}
+  - component: {fileID: 917764113003822898}
+  - component: {fileID: 5862048591032378609}
   m_Layer: 0
   m_Name: hooman_animated
   m_TagString: Untagged
@@ -167,8 +169,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7187352821200318982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3147411, y: 0.097176075, z: 3.4194899}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 6450547380379585053}
   - {fileID: 5943705009070736778}
@@ -194,3 +196,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &917764113003822898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7187352821200318982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c0ec5d8fb0ba14987f1767c7244a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 4885191034836725275}
+  meshRenderer: {fileID: 3714883770008014390}
+  animator: {fileID: 1490174552866382477}
+  moveSpeed: 1
+--- !u!136 &5862048591032378609
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7187352821200318982}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.17
+  m_Height: 1.57
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.49293756, z: 0}

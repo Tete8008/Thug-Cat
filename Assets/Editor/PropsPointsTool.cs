@@ -16,7 +16,7 @@ public class PropsPointsTool : EditorWindow
     private List<Vector3> propPoints;
 
 
-    [MenuItem("ThugCat/PropsPointsTool")]
+    //[MenuItem("ThugCat/PropsPointsTool")]
     static void Init()
     {
         // Get existing open window or if none, make a new one:

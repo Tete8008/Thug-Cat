@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CatBehaviour : MonoBehaviour
+public class CatBehaviour : Singleton<CatBehaviour>
 {
     public Transform self;
     public Animator animator;
@@ -11,16 +11,31 @@ public class CatBehaviour : MonoBehaviour
     public MeshRenderer meshRenderer;
     public CatModel catModel;
 
-    public float pushStrength;
+    public float maxMoveSpeed;
+
+    private float tableRadius;
 
     public void Init()
     {
         catModel.SetCat(this);
+        tableRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x / 2 * TableBehaviour.instance.meshFilter.transform.localScale.x;
     }
 
     public void PushProp()
     {
         animator.SetTrigger("Push");
+    }
+
+
+    public void Move(Vector3 velocity)
+    {
+        self.Translate(velocity);
+        Vector2 direction = new Vector2(TableBehaviour.instance.self.position.x, TableBehaviour.instance.self.position.z) - new Vector2(self.position.x, self.position.z);
+        if (direction.sqrMagnitude > tableRadius * tableRadius)
+        {
+            Vector2 clampedDirection = -Vector2.ClampMagnitude(direction, tableRadius);
+            self.position = TableBehaviour.instance.self.position + new Vector3(clampedDirection.x, self.position.y, clampedDirection.y);
+        }
     }
 
 

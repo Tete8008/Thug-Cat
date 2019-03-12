@@ -43,3 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26cf636f88e2b364881db7c27a3add5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxInputVelocity: 50

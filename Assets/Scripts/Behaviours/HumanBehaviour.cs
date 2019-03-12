@@ -16,7 +16,9 @@ public class HumanBehaviour : MonoBehaviour
     private void Start()
     {
         startAngle = Random.Range(0, Mathf.PI * 2);
-        actualRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x/2 * TableBehaviour.instance.meshFilter.transform.localScale.x+TableBehaviour.instance.humansDistanceFromTable;
+        
+        actualRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x / 2 * TableBehaviour.instance.meshFilter.transform.localScale.x + TableBehaviour.instance.humansDistanceFromTable;
+        print("human" + actualRadius) ;
         self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle), 0, Mathf.Sin(startAngle))*actualRadius;
     }
 

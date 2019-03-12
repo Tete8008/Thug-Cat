@@ -12,7 +12,7 @@ public class CatModel : MonoBehaviour
         this.cat = cat;
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Prop"))
         {
@@ -21,6 +21,6 @@ public class CatModel : MonoBehaviour
             Vector3 direction = (prop.self.position - cat.self.position).normalized;
             other.transform.parent.parent.GetComponent<PropBehaviour>().Push(direction*cat.pushStrength);
         }
-    }
+    }*/
 
 }

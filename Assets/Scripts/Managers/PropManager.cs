@@ -52,7 +52,6 @@ public class PropManager : Singleton<PropManager>
         
         CatManager.instance.cat.PushProp();
         
-        
     }
 
 
@@ -60,8 +59,11 @@ public class PropManager : Singleton<PropManager>
     {
         propsPushed++;
         UIManager.instance.RefreshPropsPushedCount();
-        Destroy(prop.gameObject);
-        SpawnRandomProp();
+        Destroy(prop.rigidBody.gameObject);
+        Instantiate(prop.brokenProp,prop.self.position,prop.self.rotation);
+
+
+        //SpawnRandomProp();
         
     }
 }

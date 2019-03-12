@@ -5,19 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Ground : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Prop"))
-        {
-            PropManager.instance.PropFallen(other.transform.parent.parent.GetComponent<PropBehaviour>());
-        }
-    }
-
-    private void Start()
+    private void Awake()
     {
         if (GameManager.instance == null)
         {
             SceneManager.LoadScene("Splash");
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Prop"))
+        {
+            PropBehaviour prop = collision.collider.transform.parent.parent.GetComponent<PropBehaviour>();
+
+            PropManager.instance.PropFallen(prop);
         }
     }
 

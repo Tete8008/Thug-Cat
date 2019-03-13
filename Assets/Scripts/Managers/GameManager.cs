@@ -15,6 +15,8 @@ public class GameManager : Singleton<GameManager>
     public GameObject inputManagerPrefab;
     public GameObject humanManagerPrefab;
     public GameObject uiManagerPrefab;
+    public GameObject levelManagerPrefab;
+
 
     private void Start()
     {
@@ -25,6 +27,10 @@ public class GameManager : Singleton<GameManager>
         Instantiate(inputManagerPrefab, self);
         Instantiate(humanManagerPrefab, self);
         Instantiate(uiManagerPrefab, self);
+        Instantiate(levelManagerPrefab, self);
+
+        LevelManager.instance.currentLevel = PlayerPrefs.GetInt("level");
+
 
 
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
@@ -34,11 +40,19 @@ public class GameManager : Singleton<GameManager>
 
     private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        CatManager.instance.Init();
-        PropManager.instance.Init();
+        
+        
         UIManager.instance.Init();
-        HumanManager.instance.Init();
+
+        UIManager.instance.DisplayPanel(UIPanel.MainMenu);
+
         SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
+    }
+
+
+    private void StartGame()
+    {
+        LevelManager.instance.LoadCurrentLevel();
     }
 
 
@@ -53,5 +67,11 @@ public class GameManager : Singleton<GameManager>
         {
             Debug.Log("YOU LOSE");
         }
+    }
+
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("level",LevelManager.instance.currentLevel);
     }
 }

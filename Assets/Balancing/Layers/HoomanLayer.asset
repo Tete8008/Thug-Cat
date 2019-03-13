@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b8b73398a03c543a477f36273f58e8, type: 3}
   m_Name: HoomanLayer
   m_EditorClassIdentifier: 
-  humanPath: {fileID: 11400000, guid: e2783f65ac931324f8e85da0c9575fe1, type: 2}
+  distanceFromTable: 2
   humanCount: 1

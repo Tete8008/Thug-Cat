@@ -9,10 +9,8 @@ public class HumanManager : Singleton<HumanManager>
 
     public int humanCount;
 
-    public List<HoomanLayer> hoomanLayers;
 
-
-    public void Init()
+    public void Init(List<HoomanLayer> hoomanLayers)
     {
         activeHumans = new List<HumanBehaviour>();
 
@@ -20,24 +18,24 @@ public class HumanManager : Singleton<HumanManager>
         {
             for (int j = 0; j < hoomanLayers[i].humanCount; j++)
             {
-                SpawnRandomHuman(hoomanLayers[i].humanPath);
+                SpawnRandomHuman(hoomanLayers[i].distanceFromTable);
             }
         }
     }
 
-    public void SpawnHuman(GameObject go,HumanPath humanPath)
+    public void SpawnHuman(GameObject go,float distance)
     {
         HumanBehaviour human = Instantiate(go).GetComponent<HumanBehaviour>();
-        human.Init(humanPath);
+        human.Init(distance);
         activeHumans.Add(human);
     }
 
-    public void SpawnRandomHuman(HumanPath humanPath)
+    public void SpawnRandomHuman(float distance)
     {
         if (humanPrefabs.Count > 0)
         {
             int index = Random.Range(0, humanPrefabs.Count);
-            SpawnHuman(humanPrefabs[index],humanPath);
+            SpawnHuman(humanPrefabs[index],distance);
         }
         else
         {

@@ -80,12 +80,13 @@ public class HumanBehaviour : MonoBehaviour
         return p;
     }
 
-    private void Start()
+
+    public void Init(float distanceFromTable)
     {
         startAngle = Random.Range(0, Mathf.PI * 2);
-        
-        actualRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x / 2 * TableBehaviour.instance.meshFilter.transform.localScale.x + TableBehaviour.instance.humansDistanceFromTable;
-        self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle), 0, Mathf.Sin(startAngle))*actualRadius;
+
+        actualRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x / 2 * TableBehaviour.instance.meshFilter.transform.localScale.x + distanceFromTable;
+        self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle), 0, Mathf.Sin(startAngle)) * actualRadius;
     }
 
 
@@ -185,7 +186,7 @@ public class HumanBehaviour : MonoBehaviour
     {
         //play catch anim
         //ReputPropOnTable(prop);
-        UIManager.instance.DisplayLosePanel();
+        UIManager.instance.DisplayPanel(UIPanel.Lose);
 
 
     }

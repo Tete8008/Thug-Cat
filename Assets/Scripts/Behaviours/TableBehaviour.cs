@@ -5,6 +5,5 @@ using UnityEngine;
 public class TableBehaviour : Singleton<TableBehaviour>
 {
     public Transform self;
-    public float humansDistanceFromTable;
     public MeshFilter meshFilter;
 }

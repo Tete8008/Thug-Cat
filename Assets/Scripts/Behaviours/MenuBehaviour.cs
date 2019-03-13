@@ -14,4 +14,13 @@ public class MenuBehaviour : MonoBehaviour
     public GameObject pausePanel;
     public GameObject ingameOverlay;
 
+
+    public void Play()
+    {
+        UIManager.instance.HideActivePanel();
+        UIManager.instance.DisplayPanel(UIPanel.IngameOverlay);
+        LevelManager.instance.LoadCurrentLevel();
+
+    }
+
 }

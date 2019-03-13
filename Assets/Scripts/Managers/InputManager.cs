@@ -11,17 +11,27 @@ public class InputManager : Singleton<InputManager>
 
     public float maxInputVelocity;
 
+    private bool active = false;
+
+    public void Enable(bool on)
+    {
+        active = on;
+    }
+
     private void Update()
     {
+        if (!active) { return; }
         if (Input.GetMouseButtonDown(0))
         {
             initialPosition = Input.mousePosition;
             isTouching = true;
+            CatBehaviour.instance.animator.SetBool("IsMoving", true);
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             isTouching = false;
+            CatBehaviour.instance.animator.SetBool("IsMoving", false);
         }
 
 

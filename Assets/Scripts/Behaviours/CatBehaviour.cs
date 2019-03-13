@@ -7,8 +7,9 @@ public class CatBehaviour : Singleton<CatBehaviour>
     public Transform self;
     public Animator animator;
 
-    public MeshFilter meshFilter;
-    public MeshRenderer meshRenderer;
+    /*public MeshFilter meshFilter;
+    public MeshRenderer meshRenderer;*/
+    public SkinnedMeshRenderer skinnedMeshRenderer;
     public CatModel catModel;
 
     public float maxMoveSpeed;
@@ -38,17 +39,16 @@ public class CatBehaviour : Singleton<CatBehaviour>
         self.Translate(velocity);
         Vector2 direction = new Vector2(TableBehaviour.instance.self.position.x, TableBehaviour.instance.self.position.z) - new Vector2(self.position.x, self.position.z);
         float angle = Vector2.SignedAngle(new Vector2(velocity.x,velocity.z), Vector2.up)+180;
-        meshRenderer.transform.eulerAngles = new Vector3(meshRenderer.transform.eulerAngles.x, angle, meshRenderer.transform.eulerAngles.z);
+        animator.transform.eulerAngles = new Vector3(animator.transform.eulerAngles.x, angle, animator.transform.eulerAngles.z);
         if (direction.sqrMagnitude > tableRadius * tableRadius)
         {
             Vector2 clampedDirection = -Vector2.ClampMagnitude(direction, tableRadius);
             self.position = TableBehaviour.instance.self.position + new Vector3(clampedDirection.x, catHeight, clampedDirection.y);
         }
-        
-        
     }
 
 
-    
+
+
 
 }

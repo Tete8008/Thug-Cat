@@ -10,8 +10,6 @@ public class CatManager : Singleton<CatManager>
     public Vector3 catSpawnPosition;
     public Vector3 catSpawnRotation;
 
-    public RuntimeAnimatorController catAnimatorController;
-
     [System.NonSerialized] public CatBehaviour cat;
 
 

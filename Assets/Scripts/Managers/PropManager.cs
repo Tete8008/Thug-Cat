@@ -7,20 +7,18 @@ public class PropManager : Singleton<PropManager>
 
     [System.NonSerialized] public int propsPushed =0;
 
-    public PropSpawnPointsData propSpawnPointsData;
-
     //private bool pushing;
 
     public List<GameObject> propPrefabs;
 
     [System.NonSerialized] public List<PropBehaviour> activeProps;
 
-    //private int 
 
 
-    public void Init()
+    public void Init(PropSpawnPointsData propSpawnPointsData)
     {
         activeProps=new List<PropBehaviour>();
+
         for (int i = 0; i < propSpawnPointsData.propSpawnPositions.Count; i++)
         {
             SpawnRandomProp(propSpawnPointsData.propSpawnPositions[i],propSpawnPointsData.propSpawnRotations[i]);

@@ -13,7 +13,19 @@ MonoBehaviour:
   m_Name: HumanPath
   m_EditorClassIdentifier: 
   pathName: zbeub
-  points: []
-  bezierHandleBeforePoints: []
-  bezierHandleAfterPoints: []
-  bezierDivisions: 2
+  points:
+  - {x: -1.2158725, y: 7.499202}
+  - {x: 12.637686, y: -0.5015826}
+  - {x: -7.6630564, y: -7.5434628}
+  - {x: -15.008781, y: 3.4595895}
+  bezierHandleBeforePoints:
+  - {x: 5.5349813, y: 7.407646}
+  - {x: 7.9481816, y: -7.940407}
+  - {x: -10.643412, y: -5.84845}
+  - {x: -12.697924, y: 7.3763013}
+  bezierHandleAfterPoints:
+  - {x: 7.1153874, y: 4.269318}
+  - {x: 1.2458763, y: -10.6498995}
+  - {x: -12.24699, y: 0.8425002}
+  - {x: -4.467827, y: 7.4780154}
+  bezierDivisions: 7

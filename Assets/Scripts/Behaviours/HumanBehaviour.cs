@@ -26,7 +26,7 @@ public class HumanBehaviour : MonoBehaviour
 
     public void Init(HumanPath humanPath)
     {
-        self.transform.position = new Vector3(humanPath.points[0].x,0, humanPath.points[0].y);
+        self.position = new Vector3(humanPath.points[0].x,0, humanPath.points[0].y);
         this.humanPath = humanPath;
         realPathPoints = new List<Vector3>();
         for (int j = 0; j < humanPath.points.Count; j++)

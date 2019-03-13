@@ -92,9 +92,6 @@ public class HumanPathsInspector : Editor
             humanPaths.humanPaths.Add(humanPath);
 
             AssetDatabase.SaveAssets();
-
-
-            
         }
 
         
@@ -108,8 +105,8 @@ public class HumanPathsInspector : Editor
         }
 
         EditorGUILayout.EndVertical();
-
-        EditorUtility.SetDirty(humanPaths);
+        SceneView.RepaintAll();
+        
     }
 
     private void OnSceneGUI()
@@ -197,10 +194,12 @@ public class HumanPathsInspector : Editor
                     Handles.DrawDottedLine(new Vector3(humanPath.points[0].x, 0, humanPath.points[0].y), handleAfterPoint, HandleUtility.GetHandleSize(handleAfterPoint) * 0.05f);
                     Handles.color = color;
                 }
-                
-                
-
             }
+        }
+
+        for (int i = 0; i < humanPaths.humanPaths.Count; i++)
+        {
+            EditorUtility.SetDirty(humanPaths.humanPaths[i]);
         }
     }
 }

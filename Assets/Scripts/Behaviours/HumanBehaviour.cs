@@ -97,7 +97,9 @@ public class HumanBehaviour : MonoBehaviour
         {
             time -= Mathf.PI * 2 / moveSpeed;
         }
-        self.position = new Vector3(Mathf.Cos(startAngle+time*moveSpeed), 0, Mathf.Sin(startAngle+time * moveSpeed)) * actualRadius;
+        float angle = startAngle + time * moveSpeed;
+        self.position = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * actualRadius;
+        self.eulerAngles = new Vector3(self.eulerAngles.x, -angle / (2 * Mathf.PI) * 360-90, self.eulerAngles.z);
     }
 
     /*private void FollowPath(float distanceRemaining)

@@ -211,7 +211,7 @@ MonoBehaviour:
   self: {fileID: 4885191034836725275}
   meshRenderer: {fileID: 3714883770008014390}
   animator: {fileID: 1490174552866382477}
-  moveSpeed: 4
+  moveSpeed: -10
 --- !u!136 &5862048591032378609
 CapsuleCollider:
   m_ObjectHideFlags: 0

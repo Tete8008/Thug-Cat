@@ -10,7 +10,6 @@ public class HumanBehaviour : MonoBehaviour
 
     public float moveSpeed;
     private float startAngle;
-    private float time;
 
     private float actualRadius;
     private HumanPath humanPath;
@@ -18,10 +17,8 @@ public class HumanBehaviour : MonoBehaviour
     private List<Vector3> realPathPoints;
     private float pathIndex;
 
-    private void Start()
-    {
-        
-    }
+    private float distanceTravelled;
+
 
 
     public void Init(HumanPath humanPath)
@@ -54,7 +51,6 @@ public class HumanBehaviour : MonoBehaviour
         {
             if (realPathPoints[i] == lastPoint)
             {
-                print("doublon removed");
                 realPathPoints.RemoveAt(i);
                 i--;
                 continue;
@@ -63,6 +59,11 @@ public class HumanBehaviour : MonoBehaviour
         }
 
         realPathPoints.RemoveAt(realPathPoints.Count - 1);
+
+
+
+        print(realPathPoints[realPathPoints.Count - 1]);
+        print(realPathPoints[0]);
 
     }
 
@@ -110,24 +111,82 @@ public class HumanBehaviour : MonoBehaviour
         self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle+time*moveSpeed), 0, Mathf.Sin(startAngle+time * moveSpeed)) * actualRadius;
     }*/
 
-
-    private void Update()
+    private void FollowPath(float distanceRemaining)
     {
-        pathIndex += Time.deltaTime*moveSpeed;
-        if ((int)pathIndex>=realPathPoints.Count)
+        int currentIndex=(int)pathIndex;
+        float sign = Mathf.Sign(distanceRemaining);
+        int nextIndex=(int)pathIndex+ 1* (int)sign;
+
+
+        if (sign <0 && nextIndex < 0)
         {
-            time =0;
-            pathIndex = 0;
+            nextIndex = realPathPoints.Count - 1;
+        }else if (sign >0 && nextIndex > realPathPoints.Count - 1)
+        {
+            nextIndex = 0;
         }
 
-        if ((int)pathIndex < realPathPoints.Count - 1)
+
+        
+        float distanceForNextPoint = (realPathPoints[nextIndex] - realPathPoints[currentIndex]).magnitude;
+        
+
+
+        float diff = distanceRemaining / distanceForNextPoint;
+        
+        if (Mathf.Abs(diff) > 1)
         {
-            self.position = Vector3.Lerp(realPathPoints[(int)pathIndex], realPathPoints[(int)pathIndex + 1], pathIndex - (int)pathIndex);
+            pathIndex = nextIndex;
+            FollowPath(distanceRemaining-distanceForNextPoint*sign);
         }
         else
         {
-            self.position = Vector3.Lerp(realPathPoints[(int)pathIndex], realPathPoints[0], pathIndex - (int)pathIndex);
+            pathIndex += diff;
         }
+    }
+
+
+    private void Update()
+    {
+        FollowPath(Time.deltaTime * moveSpeed);
+        
+
+        
+
+        if (pathIndex > realPathPoints.Count - 1)
+        {
+            if (pathIndex < realPathPoints.Count)
+            {
+                self.position = Vector3.Lerp(realPathPoints[(int)pathIndex], realPathPoints[0], pathIndex - (int)pathIndex);
+            }
+            else
+            {
+                pathIndex -= realPathPoints.Count;
+            }
+        }
+        else if(pathIndex<0)
+        {
+            if (pathIndex > -1)
+            {
+                self.position = Vector3.Lerp(realPathPoints[0], realPathPoints[realPathPoints.Count-1], 1-(pathIndex - ((int)pathIndex-1)));
+            }
+            else
+            {
+                pathIndex += realPathPoints.Count;
+            }
+        }
+        else
+        {
+            self.position = Vector3.Lerp(realPathPoints[(int)pathIndex], realPathPoints[(int)pathIndex + 1], pathIndex - (int)pathIndex);
+        }
+
+        
+            
+        /*}
+        else
+        {
+            self.position = Vector3.Lerp(realPathPoints[(int)pathIndex], realPathPoints[0], pathIndex - (int)pathIndex);
+        }*/
         
     }
 }

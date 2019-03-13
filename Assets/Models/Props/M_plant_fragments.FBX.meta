@@ -1,66 +1,66 @@
 fileFormatVersion: 2
-guid: d82c58e7e7e615848bfac42cd66aebf2
+guid: 520e6d5e78bdd0743aa095e47fba20d9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: vase01
-    100002: vase02
-    100004: vase03
-    100006: vase04
-    100008: vase05
-    100010: vase06
-    100012: vase07
-    100014: vase08
-    100016: vase09
-    100018: vase10
+    100000: Cylinder003_Part_1
+    100002: Cylinder003_Part_10
+    100004: Cylinder003_Part_2
+    100006: Cylinder003_Part_3
+    100008: Cylinder003_Part_4
+    100010: Cylinder003_Part_5
+    100012: Cylinder003_Part_6
+    100014: Cylinder003_Part_7
+    100016: Cylinder003_Part_8
+    100018: Cylinder003_Part_9
     100020: //RootNode
-    400000: vase01
-    400002: vase02
-    400004: vase03
-    400006: vase04
-    400008: vase05
-    400010: vase06
-    400012: vase07
-    400014: vase08
-    400016: vase09
-    400018: vase10
+    400000: Cylinder003_Part_1
+    400002: Cylinder003_Part_10
+    400004: Cylinder003_Part_2
+    400006: Cylinder003_Part_3
+    400008: Cylinder003_Part_4
+    400010: Cylinder003_Part_5
+    400012: Cylinder003_Part_6
+    400014: Cylinder003_Part_7
+    400016: Cylinder003_Part_8
+    400018: Cylinder003_Part_9
     400020: //RootNode
-    2100000: atlas1
-    2300000: vase01
-    2300002: vase02
-    2300004: vase03
-    2300006: vase04
-    2300008: vase05
-    2300010: vase06
-    2300012: vase07
-    2300014: vase08
-    2300016: vase09
-    2300018: vase10
-    3300000: vase01
-    3300002: vase02
-    3300004: vase03
-    3300006: vase04
-    3300008: vase05
-    3300010: vase06
-    3300012: vase07
-    3300014: vase08
-    3300016: vase09
-    3300018: vase10
-    4300000: vase07
-    4300002: vase01
-    4300004: vase05
-    4300006: vase03
-    4300008: vase04
-    4300010: vase06
-    4300012: vase08
-    4300014: vase09
-    4300016: vase10
-    4300018: vase02
+    2100000: 'Material #28'
+    2300000: Cylinder003_Part_1
+    2300002: Cylinder003_Part_10
+    2300004: Cylinder003_Part_2
+    2300006: Cylinder003_Part_3
+    2300008: Cylinder003_Part_4
+    2300010: Cylinder003_Part_5
+    2300012: Cylinder003_Part_6
+    2300014: Cylinder003_Part_7
+    2300016: Cylinder003_Part_8
+    2300018: Cylinder003_Part_9
+    3300000: Cylinder003_Part_1
+    3300002: Cylinder003_Part_10
+    3300004: Cylinder003_Part_2
+    3300006: Cylinder003_Part_3
+    3300008: Cylinder003_Part_4
+    3300010: Cylinder003_Part_5
+    3300012: Cylinder003_Part_6
+    3300014: Cylinder003_Part_7
+    3300016: Cylinder003_Part_8
+    3300018: Cylinder003_Part_9
+    4300000: Cylinder003_Part_1
+    4300002: Cylinder003_Part_2
+    4300004: Cylinder003_Part_3
+    4300006: Cylinder003_Part_4
+    4300008: Cylinder003_Part_5
+    4300010: Cylinder003_Part_6
+    4300012: Cylinder003_Part_7
+    4300014: Cylinder003_Part_8
+    4300016: Cylinder003_Part_9
+    4300018: Cylinder003_Part_10
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: atlas1
+      name: 'Material #28'
     second: {fileID: 2100000, guid: 426956907e19c664d95f61a97c73cc58, type: 2}
   materials:
     importMaterials: 1

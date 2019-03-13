@@ -56,7 +56,12 @@ ModelImporter:
     4300014: verre001_Part_8
     4300016: verre001_Part_9
     4300018: verre001_Part_10
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: atlas1
+    second: {fileID: 2100000, guid: 426956907e19c664d95f61a97c73cc58, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

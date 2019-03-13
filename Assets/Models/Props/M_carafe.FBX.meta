@@ -1,66 +1,19 @@
 fileFormatVersion: 2
-guid: d82c58e7e7e615848bfac42cd66aebf2
+guid: 40ae0b5ad32bfe84e8bd440c44f6403d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: vase01
-    100002: vase02
-    100004: vase03
-    100006: vase04
-    100008: vase05
-    100010: vase06
-    100012: vase07
-    100014: vase08
-    100016: vase09
-    100018: vase10
-    100020: //RootNode
-    400000: vase01
-    400002: vase02
-    400004: vase03
-    400006: vase04
-    400008: vase05
-    400010: vase06
-    400012: vase07
-    400014: vase08
-    400016: vase09
-    400018: vase10
-    400020: //RootNode
-    2100000: atlas1
-    2300000: vase01
-    2300002: vase02
-    2300004: vase03
-    2300006: vase04
-    2300008: vase05
-    2300010: vase06
-    2300012: vase07
-    2300014: vase08
-    2300016: vase09
-    2300018: vase10
-    3300000: vase01
-    3300002: vase02
-    3300004: vase03
-    3300006: vase04
-    3300008: vase05
-    3300010: vase06
-    3300012: vase07
-    3300014: vase08
-    3300016: vase09
-    3300018: vase10
-    4300000: vase07
-    4300002: vase01
-    4300004: vase05
-    4300006: vase03
-    4300008: vase04
-    4300010: vase06
-    4300012: vase08
-    4300014: vase09
-    4300016: vase10
-    4300018: vase02
+    100000: //RootNode
+    400000: //RootNode
+    2100000: 'Material #28'
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cylinder004
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: atlas1
+      name: 'Material #28'
     second: {fileID: 2100000, guid: 426956907e19c664d95f61a97c73cc58, type: 2}
   materials:
     importMaterials: 1

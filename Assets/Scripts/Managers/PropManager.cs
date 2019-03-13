@@ -44,7 +44,7 @@ public class PropManager : Singleton<PropManager>
 
     public void SpawnProp(GameObject go,Vector3 position,Quaternion rotation)
     {
-        activeProps.Add(Instantiate(go, position, Quaternion.identity).GetComponent<PropBehaviour>());
+        activeProps.Add(Instantiate(go, position, go.transform.rotation).GetComponent<PropBehaviour>());
     }
 
 

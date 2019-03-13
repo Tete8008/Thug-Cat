@@ -15,8 +15,7 @@ public class PropManager : Singleton<PropManager>
 
     [System.NonSerialized] public List<PropBehaviour> activeProps;
 
-
-
+    //private int 
 
 
     public void Init()
@@ -41,14 +40,11 @@ public class PropManager : Singleton<PropManager>
             Debug.LogWarning("no prop prefab linked");
             return;
         }
-
-        
-        
     }
 
     public void SpawnProp(GameObject go,Vector3 position,Quaternion rotation)
     {
-        activeProps.Add(Instantiate(go, position, rotation).GetComponent<PropBehaviour>());
+        activeProps.Add(Instantiate(go, position, Quaternion.identity).GetComponent<PropBehaviour>());
     }
 
 

@@ -183,7 +183,7 @@ public class HumanBehaviour : MonoBehaviour
     {
         //play catch anim
         //ReputPropOnTable(prop);
-
+        UIManager.instance.DisplayLosePanel();
 
 
     }

@@ -40,7 +40,7 @@ public class PropsPointsTool : EditorWindow
 
 
         centeredTextStyle = new GUIStyle() { alignment = TextAnchor.MiddleCenter };
-        propPoints = propManagerPrefab.propSpawnPoints;
+        //propPoints = propManagerPrefab.propSpawnPoints;
         if (propPoints == null)
         {
             propPoints = new List<Vector3>();
@@ -72,11 +72,11 @@ public class PropsPointsTool : EditorWindow
 
         if (GUILayout.Button("-"))
         {
-            if (propManagerPrefab.propSpawnPoints.Count > 0)
+            /*if (propManagerPrefab.propSpawnPoints.Count > 0)
             {
                 propPoints.RemoveAt(propPoints.Count - 1);
                 saveNeeded = true;
-            }
+            }*/
         }
 
         EditorGUILayout.EndHorizontal();

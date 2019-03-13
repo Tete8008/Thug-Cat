@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0babfa414d6f794893e596bf37bd7fd, type: 3}
+  m_Name: PropSpawnPointsData
+  m_EditorClassIdentifier: 
+  propSpawnPositions:
+  - {x: -1.72, y: 5.3, z: -3.46}
+  - {x: 2.2, y: 5.3, z: -0.44}
+  - {x: -3.21, y: 5.3, z: 1.95}
+  - {x: 1.1, y: 5.3, z: -3.89}
+  - {x: -1.37, y: 5.3, z: -0.24}
+  propSpawnRotations:
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}

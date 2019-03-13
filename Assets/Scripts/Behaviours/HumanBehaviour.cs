@@ -18,12 +18,13 @@ public class HumanBehaviour : MonoBehaviour
     private float pathIndex;
 
     private float distanceTravelled;
+    private float time;
 
 
 
     public void Init(HumanPath humanPath)
     {
-        self.position = new Vector3(humanPath.points[0].x,0, humanPath.points[0].y);
+        /*self.position = new Vector3(humanPath.points[0].x,0, humanPath.points[0].y);
         this.humanPath = humanPath;
         realPathPoints = new List<Vector3>();
         for (int j = 0; j < humanPath.points.Count; j++)
@@ -58,19 +59,10 @@ public class HumanBehaviour : MonoBehaviour
             lastPoint = realPathPoints[i];
         }
 
-        realPathPoints.RemoveAt(realPathPoints.Count - 1);
-
-
-
-        print(realPathPoints[realPathPoints.Count - 1]);
-        print(realPathPoints[0]);
-
+        realPathPoints.RemoveAt(realPathPoints.Count - 1);*/
     }
 
 
-
-        
-    
 
     Vector3 CalculateCubicBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3)
     {
@@ -88,10 +80,7 @@ public class HumanBehaviour : MonoBehaviour
         return p;
     }
 
-
-
-
-    /*private void Start()
+    private void Start()
     {
         startAngle = Random.Range(0, Mathf.PI * 2);
         
@@ -108,10 +97,10 @@ public class HumanBehaviour : MonoBehaviour
         {
             time -= Mathf.PI * 2 / moveSpeed;
         }
-        self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle+time*moveSpeed), 0, Mathf.Sin(startAngle+time * moveSpeed)) * actualRadius;
-    }*/
+        self.position = new Vector3(Mathf.Cos(startAngle+time*moveSpeed), 0, Mathf.Sin(startAngle+time * moveSpeed)) * actualRadius;
+    }
 
-    private void FollowPath(float distanceRemaining)
+    /*private void FollowPath(float distanceRemaining)
     {
         int currentIndex=(int)pathIndex;
         float sign = Mathf.Sign(distanceRemaining);
@@ -151,8 +140,6 @@ public class HumanBehaviour : MonoBehaviour
         FollowPath(Time.deltaTime * moveSpeed);
         
 
-        
-
         if (pathIndex > realPathPoints.Count - 1)
         {
             if (pathIndex < realPathPoints.Count)
@@ -179,14 +166,33 @@ public class HumanBehaviour : MonoBehaviour
         {
             self.position = Vector3.Lerp(realPathPoints[(int)pathIndex], realPathPoints[(int)pathIndex + 1], pathIndex - (int)pathIndex);
         }
+    }*/
 
-        
-            
-        /*}
-        else
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Prop"))
         {
-            self.position = Vector3.Lerp(realPathPoints[(int)pathIndex], realPathPoints[0], pathIndex - (int)pathIndex);
-        }*/
-        
+            CatchProp(other.GetComponent<PropBehaviour>());
+        }
     }
+
+
+    private void CatchProp(PropBehaviour prop)
+    {
+        //play catch anim
+        //ReputPropOnTable(prop);
+
+    }
+
+
+    private void ReputPropOnTable(PropBehaviour prop)
+    {
+        prop.self.position = prop.initialPosition;
+        prop.self.rotation = prop.initialRotation;
+        prop.rigidBody.velocity = Vector3.zero;
+        prop.rigidBody.angularVelocity = Vector3.zero;
+    }
+
 }

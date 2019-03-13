@@ -10,8 +10,18 @@ public class PropBehaviour : MonoBehaviour
 
     public GameObject brokenProp;
 
+    [System.NonSerialized] public Vector3 initialPosition;
+    [System.NonSerialized] public Quaternion initialRotation;
+
+    private void Start()
+    {
+        initialPosition = self.position;
+        initialRotation = self.rotation;
+    }
+
     public void Push(Vector3 forceVector)
     {
         rigidBody.AddForce(forceVector, ForceMode.Impulse);
     }
+
 }

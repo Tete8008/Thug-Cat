@@ -211,7 +211,7 @@ MonoBehaviour:
   self: {fileID: 4885191034836725275}
   meshRenderer: {fileID: 3714883770008014390}
   animator: {fileID: 1490174552866382477}
-  moveSpeed: -10
+  moveSpeed: 2
 --- !u!136 &5862048591032378609
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -220,9 +220,9 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7187352821200318982}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.17
+  m_Radius: 0.3
   m_Height: 1.57
   m_Direction: 1
   m_Center: {x: 0, y: 0.49293756, z: 0}

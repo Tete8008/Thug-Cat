@@ -43,9 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff2a6a10a43a734aa39385c1a2b6ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propSpawnPoints:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  propSpawnPointsData: {fileID: 11400000, guid: 0cc55d10ed8078341bac9c773ad75129,
+    type: 2}
   propPrefabs:
-  - {fileID: 5074741065288536853, guid: 07ee9d346852aea4aa15f075e41350f7, type: 3}
+  - {fileID: 7384132315400989541, guid: 08ca8dac4709b1f49a84cb953a987bdf, type: 3}
+  - {fileID: 8699313177820994190, guid: 3b6a72751da1cf04088bc69ba9c73771, type: 3}

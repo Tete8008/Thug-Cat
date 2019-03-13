@@ -7,29 +7,34 @@ public class PropManager : Singleton<PropManager>
 
     [System.NonSerialized] public int propsPushed =0;
 
-    [System.NonSerialized] public PropBehaviour activeProp;
-
-    public List<Vector3> propSpawnPoints;
+    public PropSpawnPointsData propSpawnPointsData;
 
     //private bool pushing;
 
     public List<GameObject> propPrefabs;
+
+    [System.NonSerialized] public List<PropBehaviour> activeProps;
+
 
 
 
 
     public void Init()
     {
-        SpawnRandomProp();
+        activeProps=new List<PropBehaviour>();
+        for (int i = 0; i < propSpawnPointsData.propSpawnPositions.Count; i++)
+        {
+            SpawnRandomProp(propSpawnPointsData.propSpawnPositions[i],propSpawnPointsData.propSpawnRotations[i]);
+        }
     }
 
 
-    public void SpawnRandomProp()
+    public void SpawnRandomProp(Vector3 position,Quaternion rotation)
     {
         if (propPrefabs.Count > 0)
         {
             int index = Random.Range(0, propPrefabs.Count);
-            SpawnProp(propPrefabs[index]);
+            SpawnProp(propPrefabs[index],position,rotation);
         }
         else
         {
@@ -41,9 +46,9 @@ public class PropManager : Singleton<PropManager>
         
     }
 
-    public void SpawnProp(GameObject go)
+    public void SpawnProp(GameObject go,Vector3 position,Quaternion rotation)
     {
-        //activeProp=Instantiate(go, propSpawnPoint, Quaternion.identity).GetComponent<PropBehaviour>();
+        activeProps.Add(Instantiate(go, position, rotation).GetComponent<PropBehaviour>());
     }
 
 
@@ -58,6 +63,7 @@ public class PropManager : Singleton<PropManager>
     public void PropFallen(PropBehaviour prop)
     {
         propsPushed++;
+        activeProps.Remove(prop);
         UIManager.instance.RefreshPropsPushedCount();
         
         GameObject fragments=Instantiate(prop.brokenProp,prop.self.position,prop.self.rotation);

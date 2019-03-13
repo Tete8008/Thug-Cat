@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PropSpawnPoints : MonoBehaviour
+public class PropSpawnPoints : Singleton<PropSpawnPoints>
 {
-    public List<Transform> propSpawnTransforms;
 }

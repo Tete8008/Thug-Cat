@@ -40,4 +40,18 @@ public class GameManager : Singleton<GameManager>
         HumanManager.instance.Init();
         SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
     }
+
+
+
+    public void GameOver(bool victory)
+    {
+        if (victory)
+        {
+            Debug.Log("YOU WIN");
+        }
+        else
+        {
+            Debug.Log("YOU LOSE");
+        }
+    }
 }

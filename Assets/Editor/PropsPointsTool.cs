@@ -53,8 +53,6 @@ public class PropsPointsTool : EditorWindow
     }
 
 
-    
-
 
     private void OnSceneGUIDelegate(SceneView sceneView)
     {

@@ -29,7 +29,7 @@ public class InputManager : Singleton<InputManager>
         {
             Vector3 direction = Input.mousePosition - initialPosition;
             Vector3 velocity = new Vector3(direction.x, 0, direction.y) ;
-            CatBehaviour.instance.Move(Vector3.ClampMagnitude(velocity,maxInputVelocity) * Time.deltaTime*CatBehaviour.instance.maxMoveSpeed);
+            CatBehaviour.instance.Move(Vector3.ClampMagnitude(velocity,maxInputVelocity) * Time.deltaTime);
         }
 
     }

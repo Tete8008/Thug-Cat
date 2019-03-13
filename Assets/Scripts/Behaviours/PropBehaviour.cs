@@ -10,6 +10,8 @@ public class PropBehaviour : MonoBehaviour
 
     public GameObject brokenProp;
 
+    public float weight;
+
     [System.NonSerialized] public Vector3 initialPosition;
     [System.NonSerialized] public Quaternion initialRotation;
 

@@ -23,4 +23,27 @@ public class CatModel : MonoBehaviour
         }
     }*/
 
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.CompareTag("Prop"))
+        {
+            PropBehaviour prop = collision.collider.GetComponent<PropBehaviour>();
+            if (prop.weight != 0)
+            {
+                cat.currentSpeed = cat.maxMoveSpeed / collision.collider.GetComponent<PropBehaviour>().weight;
+            }
+            
+        }
+    }
+
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Prop"))
+        {
+            cat.currentSpeed = cat.maxMoveSpeed;
+        }
+    }
+
 }

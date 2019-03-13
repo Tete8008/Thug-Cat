@@ -222,4 +222,4 @@ MonoBehaviour:
   meshFilter: {fileID: 2599621585111526451}
   meshRenderer: {fileID: 2599621585112657651}
   catModel: {fileID: 6981174609566860374}
-  maxMoveSpeed: 0.1
+  maxMoveSpeed: 0.15

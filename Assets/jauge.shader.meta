@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 5f07210b3f409694196092fd7c33d99b
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _jauge2: {fileID: 2800000, guid: 17573c61df8d6654bb2bb96671e9f18c, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

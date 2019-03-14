@@ -22,19 +22,22 @@ public class UIManager : Singleton<UIManager>
         menu = Instantiate(canvasPrefab).GetComponent<MenuBehaviour>();
         tuto = Instantiate(tutoPrefab);
         tuto.SetActive(false);
+        menu.progressionSlider.maxValue = 1;
+        menu.progressionSlider.minValue = 0;
     }
 
     public void RefreshPropsPushedCount()
     {
         float propsNumber = LevelManager.instance.GetCurrentLevel().propSpawnPointsData.propSpawnPositions.Count;
-        menu.propsPushedText.text = (PropManager.instance.propsPushed/propsNumber/(LevelManager.instance.GetCurrentLevel().destructionPercentageRequired/100)*100)+" %";
+        //menu.propsPushedText.text = (PropManager.instance.propsPushed/propsNumber/(LevelManager.instance.GetCurrentLevel().destructionPercentageRequired/100)*100)+" %";
+        menu.progressionSlider.value = (PropManager.instance.propsPushed / propsNumber / (LevelManager.instance.GetCurrentLevel().destructionPercentageRequired / 100));
     }
 
-    public void RefreshPropsCatchedCount()
+    /*public void RefreshPropsCatchedCount()
     {
         float propsNumber = LevelManager.instance.GetCurrentLevel().propSpawnPointsData.propSpawnPositions.Count;
         menu.propsCatchedText.text = PropManager.instance.propsCatched / propsNumber / (1- LevelManager.instance.GetCurrentLevel().destructionPercentageRequired/100 )*100+ " %";
-    }
+    }*/
 
 
     public void DisplayPanel(UIPanel uIPanel)

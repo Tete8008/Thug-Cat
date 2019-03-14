@@ -16,6 +16,7 @@ public class MenuBehaviour : Singleton<MenuBehaviour>
     public GameObject pausePanel;
     public GameObject ingameOverlay;
     public GameObject skinSelectionPanel;
+    public Slider progressionSlider;
 
 
     public Button vibrationsButton;

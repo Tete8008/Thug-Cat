@@ -48,7 +48,6 @@ public class PropManager : Singleton<PropManager>
         propsPushed = 0;
         propsCatched = 0;
         UIManager.instance.RefreshPropsPushedCount();
-        UIManager.instance.RefreshPropsCatchedCount();
 
     }
 

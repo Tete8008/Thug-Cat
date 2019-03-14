@@ -221,6 +221,7 @@ public class HumanBehaviour : MonoBehaviour
         prop.rigidBody.useGravity = false;
         prop.rigidBody.velocity = Vector3.zero;
         prop.rigidBody.angularVelocity = Vector3.zero;
+        prop.attached = true;
         propsAttachedToHead.Add(prop);
         PropManager.instance.activeProps.Remove(prop);
         Debug.Log("zbeub",propsAttachedToHead[0].gameObject);
@@ -230,7 +231,6 @@ public class HumanBehaviour : MonoBehaviour
         CatBehaviour.instance.bubbleImage.gameObject.SetActive(true);
         StartCoroutine(HideBubble());
 
-        UIManager.instance.RefreshPropsCatchedCount();
         GameManager.instance.CheckGameOver();
     }
 

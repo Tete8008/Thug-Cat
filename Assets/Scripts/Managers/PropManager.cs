@@ -15,6 +15,8 @@ public class PropManager : Singleton<PropManager>
     [System.NonSerialized] public List<GameObject> activeFragments;
     [System.NonSerialized] public int propsCatched = 0;
 
+    public GameObject collapseFx;
+
 
 
     public void Init(PropSpawnPointsData propSpawnPointsData)
@@ -88,9 +90,16 @@ public class PropManager : Singleton<PropManager>
         GameObject fragments=Instantiate(prop.brokenProp,prop.self.position,prop.self.rotation);
         fragments.transform.localScale = prop.self.localScale;
         activeFragments.Add(fragments);
-
+        GameObject go=Instantiate(collapseFx,prop.self.position,prop.self.rotation);
+        StartCoroutine(DestroyFx(go));
         Destroy(prop.gameObject);
         //SpawnRandomProp();
         GameManager.instance.CheckGameOver();
+    }
+
+    private IEnumerator DestroyFx(GameObject fx)
+    {
+        yield return new WaitForSeconds(1);
+        //Destroy(fx);
     }
 }

@@ -19,7 +19,6 @@ public class CatSkin : MonoBehaviour
 
             for (int i = 0; i < MenuBehaviour.instance.catSkins.Count; i++)
             {
-                print(MenuBehaviour.instance.catSkins[i].material != material);
                 if (MenuBehaviour.instance.catSkins[i].material != material)
                 {
                     MenuBehaviour.instance.catSkins[i].animator.SetBool("Selected", false);

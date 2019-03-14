@@ -60,3 +60,5 @@ MonoBehaviour:
   - {fileID: 1708947868713121476, guid: c9e8f0fb2d863324e8bdcac507594ad9, type: 3}
   - {fileID: 3358305435596335680, guid: 4c4bd60ce65d2bf4f9c62f6a8f1c5dff, type: 3}
   - {fileID: 4231517906214217245, guid: 9139783abc6254c4ea398723e022dbe5, type: 3}
+  collapseFx: {fileID: 8788491677551648498, guid: bd7558c3abc32574e970a7507a9cd5a2,
+    type: 3}

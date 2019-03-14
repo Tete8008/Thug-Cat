@@ -127,4 +127,4 @@ MonoBehaviour:
   meshRenderer: {fileID: 7172322817252619948}
   brokenProp: {fileID: 5385117084604843097, guid: 470ea02a2535cce4396cb46909649403,
     type: 3}
-  weight: 10
+  weight: 1

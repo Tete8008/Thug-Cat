@@ -10,13 +10,18 @@ public class UIManager : Singleton<UIManager>
     public GameObject canvasPrefab;
 
     public Color optionCheckedColor;
+    public GameObject tutoPrefab;
     private GameObject activePanel;
 
     [System.NonSerialized] public MenuBehaviour menu;
 
+    [System.NonSerialized] public GameObject tuto;
+
     public void Init()
     {
         menu = Instantiate(canvasPrefab).GetComponent<MenuBehaviour>();
+        tuto = Instantiate(tutoPrefab);
+        tuto.SetActive(false);
     }
 
     public void RefreshPropsPushedCount()
@@ -53,10 +58,10 @@ public class UIManager : Singleton<UIManager>
                 break;
             case UIPanel.SkinSelection:
                 activePanel = menu.skinSelectionPanel;
-                menu.skinSelection.SetActive(true);
+                SkinSelection.instance.gameObject.SetActive(true);
                 InputManager.instance.Enable(true);
                 InputManager.instance.ToggleMode(InputMode.SkinSelection);
-                MenuBehaviour.instance.InitSkins();
+                SkinSelection.instance.InitSkins();
                 break;
         }
 

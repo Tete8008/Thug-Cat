@@ -225,9 +225,19 @@ public class HumanBehaviour : MonoBehaviour
         PropManager.instance.activeProps.Remove(prop);
         Debug.Log("zbeub",propsAttachedToHead[0].gameObject);
         PropManager.instance.propsCatched++;
-        
+
+        CatBehaviour.instance.bubbleImage.sprite = CatManager.instance.bubbleSprites[Random.Range(0, CatManager.instance.bubbleSprites.Count)];
+        CatBehaviour.instance.bubbleImage.gameObject.SetActive(true);
+        StartCoroutine(HideBubble());
+
         UIManager.instance.RefreshPropsCatchedCount();
         GameManager.instance.CheckGameOver();
+    }
+
+    private IEnumerator HideBubble()
+    {
+        yield return new WaitForSeconds(1);
+        CatBehaviour.instance.bubbleImage.gameObject.SetActive(false);
     }
 
 

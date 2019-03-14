@@ -40,7 +40,7 @@ public class InputManager : Singleton<InputManager>
                     initialPosition = Input.mousePosition;
                     isTouching = true;
                     CatBehaviour.instance.animator.SetBool("IsMoving", true);
-                    UIManager.instance.menu.tuto.SetActive(false);
+                    UIManager.instance.tuto.SetActive(false);
                 }
 
                 if (Input.GetMouseButtonUp(0))
@@ -62,7 +62,7 @@ public class InputManager : Singleton<InputManager>
                 {
                     initialPosition = Input.mousePosition;
                     isTouching = true;
-                    skinSelectionInitialPosition = UIManager.instance.menu.skinSelection.transform.position;
+                    skinSelectionInitialPosition = SkinSelection.instance.transform.position;
                 }
 
                 if (Input.GetMouseButtonUp(0))
@@ -73,12 +73,12 @@ public class InputManager : Singleton<InputManager>
                 if (isTouching)
                 {
                     float offset = (Input.mousePosition.x - initialPosition.x)/100;
-                    UIManager.instance.menu.skinSelection.transform.position = new Vector3(skinSelectionInitialPosition.x + offset, UIManager.instance.menu.skinSelection.transform.position.y, UIManager.instance.menu.skinSelection.transform.position.z);
-                    if (UIManager.instance.menu.skinSelection.transform.localPosition.x> -534.5f){
-                        UIManager.instance.menu.skinSelection.transform.localPosition = new Vector3(-534.5f, UIManager.instance.menu.skinSelection.transform.localPosition.y, UIManager.instance.menu.skinSelection.transform.localPosition.z);
-                    }else if(UIManager.instance.menu.skinSelection.transform.localPosition.x< -545.1f)
+                    SkinSelection.instance.transform.position = new Vector3(skinSelectionInitialPosition.x + offset, SkinSelection.instance.transform.position.y, SkinSelection.instance.transform.position.z);
+                    if (SkinSelection.instance.transform.localPosition.x> 0.15f){
+                        SkinSelection.instance.transform.localPosition = new Vector3(0.15f, SkinSelection.instance.transform.localPosition.y, SkinSelection.instance.transform.localPosition.z);
+                    }else if(SkinSelection.instance.transform.localPosition.x< -2.41f)
                     {
-                        UIManager.instance.menu.skinSelection.transform.localPosition = new Vector3(-545.1f, UIManager.instance.menu.skinSelection.transform.localPosition.y, UIManager.instance.menu.skinSelection.transform.localPosition.z);
+                        SkinSelection.instance.transform.localPosition = new Vector3(-2.41f, SkinSelection.instance.transform.localPosition.y, SkinSelection.instance.transform.localPosition.z);
                     }
                 }
 

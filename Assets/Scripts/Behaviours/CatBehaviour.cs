@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CatBehaviour : Singleton<CatBehaviour>
 {
     public Transform self;
     public Animator animator;
+    public Image bubbleImage;
 
     /*public MeshFilter meshFilter;
     public MeshRenderer meshRenderer;*/
@@ -38,7 +40,7 @@ public class CatBehaviour : Singleton<CatBehaviour>
     {
         
         velocity *= currentSpeed;
-        animator.SetFloat("Speed", velocity.magnitude*40);
+        animator.SetFloat("Speed", velocity.magnitude*30);
         self.Translate(velocity);
         Vector2 direction = new Vector2(TableBehaviour.instance.self.position.x, TableBehaviour.instance.self.position.z) - new Vector2(self.position.x, self.position.z);
         float angle = Vector2.SignedAngle(new Vector2(velocity.x,velocity.z), Vector2.up)+180;

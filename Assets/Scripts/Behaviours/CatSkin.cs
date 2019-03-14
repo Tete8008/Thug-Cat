@@ -17,11 +17,11 @@ public class CatSkin : MonoBehaviour
         {
             CatManager.instance.selectedCatMaterial = material;
 
-            for (int i = 0; i < MenuBehaviour.instance.catSkins.Count; i++)
+            for (int i = 0; i < SkinSelection.instance.catSkins.Count; i++)
             {
-                if (MenuBehaviour.instance.catSkins[i].material != material)
+                if (SkinSelection.instance.catSkins[i].material != material)
                 {
-                    MenuBehaviour.instance.catSkins[i].animator.SetBool("Selected", false);
+                    SkinSelection.instance.catSkins[i].animator.SetBool("Selected", false);
                 }
                 else
                 {

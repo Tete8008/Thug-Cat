@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject humanManagerPrefab;
     public GameObject uiManagerPrefab;
     public GameObject levelManagerPrefab;
+    public GameObject skinSelectionPrefab;
 
     [NonSerialized] public bool gameFinished = false;
 
@@ -35,6 +36,7 @@ public class GameManager : Singleton<GameManager>
         Instantiate(humanManagerPrefab, self);
         Instantiate(uiManagerPrefab, self);
         Instantiate(levelManagerPrefab, self);
+        Instantiate(skinSelectionPrefab, self);
 
         //LevelManager.instance.currentLevel = PlayerPrefs.GetInt("level");
         vibrationsEnabled = PlayerPrefs.GetInt("vibrations")==0?true:false;

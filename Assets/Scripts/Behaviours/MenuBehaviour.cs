@@ -15,14 +15,10 @@ public class MenuBehaviour : Singleton<MenuBehaviour>
     public GameObject optionsFrame;
     public GameObject pausePanel;
     public GameObject ingameOverlay;
-    public GameObject skinSelection;
     public GameObject skinSelectionPanel;
-    public GameObject tuto;
 
 
     public Button vibrationsButton;
-
-    public List<CatSkin> catSkins;
 
 
     private bool optionsOpen;
@@ -37,6 +33,7 @@ public class MenuBehaviour : Singleton<MenuBehaviour>
         UIManager.instance.HideActivePanel();
         UIManager.instance.DisplayPanel(UIPanel.IngameOverlay);
         LevelManager.instance.LoadCurrentLevel();
+        UIManager.instance.tuto.SetActive(true);
     }
 
 
@@ -90,28 +87,15 @@ public class MenuBehaviour : Singleton<MenuBehaviour>
     public void GoBackFromSkinSelection()
     {
         UIManager.instance.HideActivePanel();
-        UIManager.instance.menu.skinSelection.SetActive(false);
+        SkinSelection.instance.gameObject.SetActive(false);
         UIManager.instance.DisplayPanel(UIPanel.MainMenu);
         InputManager.instance.Enable(false);
         InputManager.instance.ToggleMode(InputMode.Game);
+        SkinSelection.instance.HideSkins();
+
     }
 
 
-    public void InitSkins()
-    {
-        print(CatManager.instance.selectedCatMaterial);
-        for (int i = 0; i < catSkins.Count; i++)
-        {
-            if (CatManager.instance.selectedCatMaterial == catSkins[i].material)
-            {
-                catSkins[i].animator.SetBool("Selected", true);
-            }
-            else
-            {
-                catSkins[i].animator.SetBool("Selected", false);
-            }
-
-        }
-    }
+    
 
 }

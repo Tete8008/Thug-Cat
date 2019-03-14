@@ -10,6 +10,8 @@ public class CatManager : Singleton<CatManager>
     public Vector3 catSpawnPosition;
     public Vector3 catSpawnRotation;
 
+    public List<Sprite> bubbleSprites;
+
     [System.NonSerialized] public CatBehaviour cat;
 
     public Material selectedCatMaterial;

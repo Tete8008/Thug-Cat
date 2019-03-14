@@ -47,4 +47,8 @@ MonoBehaviour:
     type: 3}
   catSpawnPosition: {x: 0, y: 4.827, z: 0}
   catSpawnRotation: {x: 0, y: 0, z: 0}
+  bubbleSprites:
+  - {fileID: 21300000, guid: c3b4901818c66064f85f2eaf8a78c118, type: 3}
+  - {fileID: 21300000, guid: 717634c60f133f2449a0f77be3af3866, type: 3}
+  - {fileID: 21300000, guid: 007258381ad16144584ad038be4a2221, type: 3}
   selectedCatMaterial: {fileID: 2100000, guid: 4cd6fc022ac1e6945bcff00084f1b0d8, type: 2}

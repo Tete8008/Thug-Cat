@@ -45,3 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasPrefab: {fileID: 1205403638613769410, guid: 5be3668112ba5444d8c59abf8c4e655d,
     type: 3}
+  optionCheckedColor: {r: 0.8584906, g: 0.56240463, b: 0.33610713, a: 0.5803922}
+  tutoPrefab: {fileID: 7453242949848531041, guid: e00f637f836b5f548b4591464dcf84ed,
+    type: 3}

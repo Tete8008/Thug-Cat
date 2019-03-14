@@ -13,6 +13,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject tutoPrefab;
     private GameObject activePanel;
 
+    public Sprite wreckEverythingSprite;
     [System.NonSerialized] public MenuBehaviour menu;
 
     [System.NonSerialized] public GameObject tuto;

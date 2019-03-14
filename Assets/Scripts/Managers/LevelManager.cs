@@ -26,12 +26,20 @@ public class LevelManager : Singleton<LevelManager>
             CatManager.instance.Init();
             InputManager.instance.Enable(true);
             GameManager.instance.gameFinished = false;
+            CatBehaviour.instance.bubbleImage.sprite = UIManager.instance.wreckEverythingSprite;
+            CatBehaviour.instance.bubbleImage.gameObject.SetActive(true);
+            StartCoroutine(HideBubble());
         }
 
 
         UIManager.instance.RefreshLevelText();
         
+    }
 
+    private IEnumerator HideBubble()
+    {
+        yield return new WaitForSeconds(1);
+        CatBehaviour.instance.bubbleImage.gameObject.SetActive(false);
     }
 
     private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)

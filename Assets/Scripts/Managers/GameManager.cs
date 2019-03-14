@@ -187,6 +187,7 @@ public class GameManager : Singleton<GameManager>
     public void CameraGoToCat()
     {
         cameraInitialPosition = Camera.main.transform.position;
+        cameraInitialRotation = Camera.main.transform.rotation;
         currentTime = 0;
         movingToCat = true;
     }

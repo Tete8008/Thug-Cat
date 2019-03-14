@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 808060619587587261}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -127,4 +127,4 @@ MonoBehaviour:
   meshRenderer: {fileID: 808060619589849725}
   brokenProp: {fileID: 1337518074407528173, guid: 603cb73f82672dc41acd7480cd2ad8bc,
     type: 3}
-  weight: 10
+  weight: 1

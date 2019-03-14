@@ -113,7 +113,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 5010890484496533896}
   brokenProp: {fileID: 2086578015374296487, guid: 7117efddce768d841a29732f2565dab9,
     type: 3}
-  weight: 10
+  weight: 1
 --- !u!65 &5316789264235946904
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -89,7 +89,7 @@ public class PropManager : Singleton<PropManager>
         fragments.transform.localScale = prop.self.localScale;
         for (int i = 0; i < fragments.transform.childCount; i++)
         {
-            fragments.transform.GetChild(i).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0, 1), Random.Range(0, 1), Random.Range(0, 1)),ForceMode.Impulse);
+            fragments.transform.GetChild(i).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0, 1), Random.Range(0, 1), Random.Range(0, 1))*100,ForceMode.Impulse);
         }
         activeFragments.Add(fragments);
 

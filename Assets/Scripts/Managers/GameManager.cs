@@ -122,6 +122,7 @@ public class GameManager : Singleton<GameManager>
         UIManager.instance.menu.pausePanel.SetActive(false);
         UIManager.instance.menu.winPanel.SetActive(false);
         UIManager.instance.menu.losePanel.SetActive(false);
+        ResetCameraPosition();
     }
 
 
@@ -159,6 +160,7 @@ public class GameManager : Singleton<GameManager>
         UIManager.instance.menu.losePanel.SetActive(false);
         UIManager.instance.menu.pausePanel.SetActive(false);
         UIManager.instance.DisplayPanel(UIPanel.MainMenu);
+        ResetCameraPosition();
     }
 
     public void CheckGameOver()
@@ -190,6 +192,12 @@ public class GameManager : Singleton<GameManager>
         cameraInitialRotation = Camera.main.transform.rotation;
         currentTime = 0;
         movingToCat = true;
+    }
+
+    public void ResetCameraPosition()
+    {
+        Camera.main.transform.position = cameraInitialPosition;
+        Camera.main.transform.rotation = cameraInitialRotation;
     }
 
 

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5b8b73398a03c543a477f36273f58e8, type: 3}
-  m_Name: HoomanLayer
+  m_Name: HoomanLayerTwoHumans
   m_EditorClassIdentifier: 
   distanceFromTable: 2
-  humanCount: 1
+  humanCount: 2

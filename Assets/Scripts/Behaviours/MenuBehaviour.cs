@@ -15,6 +15,7 @@ public class MenuBehaviour : MonoBehaviour
     public GameObject optionsFrame;
     public GameObject pausePanel;
     public GameObject ingameOverlay;
+    public GameObject skinSelectionPanel;
 
     public Button vibrationsButton;
 
@@ -69,6 +70,11 @@ public class MenuBehaviour : MonoBehaviour
         vibrationsEnabled = !vibrationsEnabled;
 
         UIManager.instance.ToggleVibrations(vibrationsEnabled);
+    }
+
+    public void GoToSkinSelection()
+    {
+        UIManager.instance.DisplayPanel(UIPanel.SkinSelection);
     }
 
 }

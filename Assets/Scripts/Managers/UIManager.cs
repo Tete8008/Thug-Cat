@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum UIPanel { MainMenu,IngameOverlay,PauseMenu,Win,Lose}
+public enum UIPanel { MainMenu,IngameOverlay,PauseMenu,Win,Lose,SkinSelection}
 
 public class UIManager : Singleton<UIManager>
 {
@@ -51,10 +51,15 @@ public class UIManager : Singleton<UIManager>
             case UIPanel.Lose:
                 activePanel = menu.losePanel;
                 break;
+            case UIPanel.SkinSelection:
+                activePanel = menu.skinSelectionPanel;
+                break;
         }
 
         activePanel.SetActive(true);
     }
+
+
 
 
     public void HideActivePanel()

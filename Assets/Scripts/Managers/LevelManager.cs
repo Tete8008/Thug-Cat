@@ -34,6 +34,5 @@ public class LevelManager : Singleton<LevelManager>
         {
             currentLevel = 0;
         }
-        
     }
 }

@@ -9,4 +9,5 @@ public class Level : ScriptableObject
     public PropSpawnPointsData propSpawnPointsData;
     [Range(0, 100)]
     public float destructionPercentageRequired;
+    public string sceneName;
 }

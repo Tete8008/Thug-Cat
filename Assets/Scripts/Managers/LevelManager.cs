@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -10,13 +11,32 @@ public class LevelManager : Singleton<LevelManager>
 
     public void LoadCurrentLevel()
     {
-        Level level = GetCurrentLevel();
-        PropManager.instance.Init(level.propSpawnPointsData);
-        HumanManager.instance.Init(level.hoomanLayers);
-        CatManager.instance.Init();
-        InputManager.instance.Enable(true);
-        GameManager.instance.gameFinished = false;
 
+        Level level = GetCurrentLevel();
+        if (SceneManager.GetActiveScene().name != level.sceneName)
+        {
+            SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+            SceneManager.LoadScene(level.sceneName);
+        }
+        else
+        {
+            PropManager.instance.Init(level.propSpawnPointsData);
+            HumanManager.instance.Init(level.hoomanLayers);
+            CatManager.instance.Init();
+            InputManager.instance.Enable(true);
+            GameManager.instance.gameFinished = false;
+        }
+
+        
+
+        
+
+    }
+
+    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
+        LoadCurrentLevel();
     }
 
     public Level GetCurrentLevel()

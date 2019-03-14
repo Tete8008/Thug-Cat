@@ -19,12 +19,13 @@ public class HumanBehaviour : MonoBehaviour
 
     private float distanceTravelled;
     private float time;
+    private bool walking = true;
 
 
 
-    public void Init(HumanPath humanPath)
+    /*public void Init(HumanPath humanPath)
     {
-        /*self.position = new Vector3(humanPath.points[0].x,0, humanPath.points[0].y);
+        self.position = new Vector3(humanPath.points[0].x,0, humanPath.points[0].y);
         this.humanPath = humanPath;
         realPathPoints = new List<Vector3>();
         for (int j = 0; j < humanPath.points.Count; j++)
@@ -59,8 +60,8 @@ public class HumanBehaviour : MonoBehaviour
             lastPoint = realPathPoints[i];
         }
 
-        realPathPoints.RemoveAt(realPathPoints.Count - 1);*/
-    }
+        realPathPoints.RemoveAt(realPathPoints.Count - 1);
+    }*/
 
 
 
@@ -87,11 +88,13 @@ public class HumanBehaviour : MonoBehaviour
 
         actualRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x / 2 * TableBehaviour.instance.meshFilter.transform.localScale.x + distanceFromTable;
         self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle), 0, Mathf.Sin(startAngle)) * actualRadius;
+        walking = true;
     }
 
 
     private void Update()
     {
+        if (!walking) { return; }
         time += Time.deltaTime;
 
         if (time * moveSpeed >= Mathf.PI * 2)
@@ -186,7 +189,11 @@ public class HumanBehaviour : MonoBehaviour
     {
         //play catch anim
         //ReputPropOnTable(prop);
-        UIManager.instance.DisplayPanel(UIPanel.Lose);
+        PropManager.instance.activeProps.Remove(prop);
+        Destroy(prop.gameObject);
+        PropManager.instance.propsCatched++;
+        UIManager.instance.RefreshPropsCatchedCount();
+        GameManager.instance.CheckGameOver();
 
 
     }
@@ -198,6 +205,12 @@ public class HumanBehaviour : MonoBehaviour
         prop.self.rotation = prop.initialRotation;
         prop.rigidBody.velocity = Vector3.zero;
         prop.rigidBody.angularVelocity = Vector3.zero;
+    }
+
+
+    public void StopWalking()
+    {
+        walking = false;
     }
 
 }

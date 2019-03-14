@@ -7,6 +7,8 @@ public class CatModel : MonoBehaviour
 
     private CatBehaviour cat;
 
+    private bool colliding = false;
+
     public void SetCat(CatBehaviour cat)
     {
         this.cat = cat;
@@ -28,19 +30,24 @@ public class CatModel : MonoBehaviour
     {
         if (collision.collider.CompareTag("Prop"))
         {
+            colliding = true;
             PropBehaviour prop = collision.collider.GetComponent<PropBehaviour>();
             if (prop.weight != 0)
             {
                 cat.currentSpeed = cat.maxMoveSpeed / collision.collider.GetComponent<PropBehaviour>().weight;
             }
-            
         }
     }
 
 
-    private void OnCollisionExit(Collision collision)
+    private void Update()
     {
-        if (collision.collider.CompareTag("Prop"))
+        if (colliding)
+        {
+            colliding = false;
+
+        }
+        else
         {
             cat.currentSpeed = cat.maxMoveSpeed;
         }

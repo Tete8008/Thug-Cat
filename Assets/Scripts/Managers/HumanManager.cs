@@ -12,6 +12,15 @@ public class HumanManager : Singleton<HumanManager>
 
     public void Init(List<HoomanLayer> hoomanLayers)
     {
+        if (activeHumans != null)
+        {
+            for (int i = 0; i < activeHumans.Count; i++)
+            {
+                Destroy(activeHumans[i].gameObject);
+            }
+        }
+
+
         activeHumans = new List<HumanBehaviour>();
 
         for (int i = 0; i < hoomanLayers.Count; i++)
@@ -44,6 +53,12 @@ public class HumanManager : Singleton<HumanManager>
         }
     }
 
-
+    public void StopHumans()
+    {
+        for (int i = 0; i < activeHumans.Count; i++)
+        {
+            activeHumans[i].StopWalking();
+        }
+    }
 
 }

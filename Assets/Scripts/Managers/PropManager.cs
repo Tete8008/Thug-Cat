@@ -12,17 +12,42 @@ public class PropManager : Singleton<PropManager>
     public List<GameObject> propPrefabs;
 
     [System.NonSerialized] public List<PropBehaviour> activeProps;
+    [System.NonSerialized] public List<GameObject> activeFragments;
+    [System.NonSerialized] public int propsCatched = 0;
 
 
 
     public void Init(PropSpawnPointsData propSpawnPointsData)
     {
+        if (activeProps != null)
+        {
+            for (int i = 0; i < activeProps.Count; i++)
+            {
+                Destroy(activeProps[i].gameObject);
+            }
+        }
+
+        if (activeFragments != null)
+        {
+            for (int i = 0; i < activeFragments.Count; i++)
+            {
+                Destroy(activeFragments[i]);
+            }
+        }
+
         activeProps=new List<PropBehaviour>();
+        activeFragments = new List<GameObject>();
 
         for (int i = 0; i < propSpawnPointsData.propSpawnPositions.Count; i++)
         {
             SpawnRandomProp(propSpawnPointsData.propSpawnPositions[i],propSpawnPointsData.propSpawnRotations[i]);
         }
+
+        propsPushed = 0;
+        propsCatched = 0;
+        UIManager.instance.RefreshPropsPushedCount();
+        UIManager.instance.RefreshPropsCatchedCount();
+
     }
 
 
@@ -62,9 +87,14 @@ public class PropManager : Singleton<PropManager>
         
         GameObject fragments=Instantiate(prop.brokenProp,prop.self.position,prop.self.rotation);
         fragments.transform.localScale = prop.self.localScale;
+        for (int i = 0; i < fragments.transform.childCount; i++)
+        {
+            fragments.transform.GetChild(i).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0, 1), Random.Range(0, 1), Random.Range(0, 1)),ForceMode.Impulse);
+        }
+        activeFragments.Add(fragments);
 
         Destroy(prop.gameObject);
         //SpawnRandomProp();
-        
+        GameManager.instance.CheckGameOver();
     }
 }

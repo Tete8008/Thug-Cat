@@ -8,6 +8,8 @@ public enum UIPanel { MainMenu,IngameOverlay,PauseMenu,Win,Lose}
 public class UIManager : Singleton<UIManager>
 {
     public GameObject canvasPrefab;
+
+    public Color optionCheckedColor;
     private GameObject activePanel;
 
     [System.NonSerialized] public MenuBehaviour menu;
@@ -19,9 +21,15 @@ public class UIManager : Singleton<UIManager>
 
     public void RefreshPropsPushedCount()
     {
-        menu.propsPushedText.text = PropManager.instance.propsPushed.ToString();
+        float propsNumber = LevelManager.instance.GetCurrentLevel().propSpawnPointsData.propSpawnPositions.Count;
+        menu.propsPushedText.text = (PropManager.instance.propsPushed/propsNumber/(LevelManager.instance.GetCurrentLevel().destructionPercentageRequired/100)*100)+" %";
     }
 
+    public void RefreshPropsCatchedCount()
+    {
+        float propsNumber = LevelManager.instance.GetCurrentLevel().propSpawnPointsData.propSpawnPositions.Count;
+        menu.propsCatchedText.text = PropManager.instance.propsCatched / propsNumber / (1- LevelManager.instance.GetCurrentLevel().destructionPercentageRequired/100 )*100+ " %";
+    }
 
 
     public void DisplayPanel(UIPanel uIPanel)
@@ -53,5 +61,25 @@ public class UIManager : Singleton<UIManager>
     {
         activePanel.SetActive(false);
     }
+
+
+    public void ToggleOptions(bool on)
+    {
+        menu.optionsFrame.SetActive(on);
+    }
+
+    public void ToggleVibrations(bool on)
+    {
+        GameManager.instance.vibrationsEnabled = on;
+        if (on)
+        {
+            menu.vibrationsButton.image.color = optionCheckedColor;
+        }
+        else
+        {
+            menu.vibrationsButton.image.color = Color.white;
+        }
+    }
+
 
 }

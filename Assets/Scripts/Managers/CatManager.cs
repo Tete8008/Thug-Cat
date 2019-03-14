@@ -20,7 +20,11 @@ public class CatManager : Singleton<CatManager>
 
     public void SpawnCat()
     {
-        cat= Instantiate(catPrefab,catSpawnPosition,Quaternion.Euler(catSpawnRotation)).GetComponent<CatBehaviour>();
+        if (cat != null)
+        {
+            Destroy(cat.gameObject);
+        }
+        cat = Instantiate(catPrefab,catSpawnPosition,Quaternion.Euler(catSpawnRotation)).GetComponent<CatBehaviour>();
         cat.Init();
     }
 }

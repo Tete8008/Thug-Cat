@@ -20,6 +20,7 @@ public class InputManager : Singleton<InputManager>
 
     private void Update()
     {
+        //print("active" + active);
         if (!active) { return; }
         if (Input.GetMouseButtonDown(0))
         {

@@ -15,5 +15,25 @@ public class LevelManager : Singleton<LevelManager>
         HumanManager.instance.Init(level.hoomanLayers);
         CatManager.instance.Init();
         InputManager.instance.Enable(true);
+        GameManager.instance.gameFinished = false;
+
+    }
+
+    public Level GetCurrentLevel()
+    {
+        return levels[currentLevel];
+    }
+
+    public void NextLevel()
+    {
+        if (currentLevel < levels.Count - 1)
+        {
+            currentLevel++;
+        }
+        else
+        {
+            currentLevel = 0;
+        }
+        
     }
 }

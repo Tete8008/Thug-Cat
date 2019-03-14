@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 4287717421444282266}
   - component: {fileID: 2401319674493287324}
   - component: {fileID: 2985485418992282186}
-  - component: {fileID: 5653060385704951063}
   - component: {fileID: 1160894652020922615}
+  - component: {fileID: 4057722661385608567}
   m_Layer: 0
   m_Name: Lantern
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,19 +96,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &5653060385704951063
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6456552051899289813}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.39833453, y: 0.43450108, z: 0.8571725}
-  m_Center: {x: 0, y: -0.018083233, z: 0.42858624}
 --- !u!114 &1160894652020922615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +114,17 @@ MonoBehaviour:
   brokenProp: {fileID: 191986254916762661, guid: 4b1e2633dc2a8b94b944289c8ce453cb,
     type: 3}
   weight: 0
+--- !u!64 &4057722661385608567
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456552051899289813}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: ab854cf5986d3c346947ea0b45a767ed, type: 3}

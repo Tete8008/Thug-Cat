@@ -1,62 +1,96 @@
 fileFormatVersion: 2
-guid: c734f89305383f5429d9191d064bbe4f
+guid: 5450f7f81c255a048a9bb5bc9af2ae09
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Dummy001
-    100004: Dummy002
-    100006: Dummy003
-    100008: Dummy004
-    100010: ear
-    100012: ear001
-    100014: head
-    100016: IK Chain001
-    100018: IK Chain002
-    100020: IK Chain003
-    100022: IK Chain004
-    100024: master
-    100026: master001
-    100028: neck
-    100030: oeil
-    100032: oeil001
-    100034: pattel_002
-    100036: pattel_003
-    100038: pattel_004
-    100040: pattel_1
-    100042: spine1
-    100044: tail002
-    100046: tail003
-    100048: tail1
-    400000: //RootNode
-    400002: Dummy001
-    400004: Dummy002
-    400006: Dummy003
-    400008: Dummy004
-    400010: ear
-    400012: ear001
-    400014: head
-    400016: IK Chain001
-    400018: IK Chain002
-    400020: IK Chain003
-    400022: IK Chain004
-    400024: master
-    400026: master001
-    400028: neck
-    400030: oeil
-    400032: oeil001
-    400034: pattel_002
-    400036: pattel_003
-    400038: pattel_004
-    400040: pattel_1
-    400042: spine1
-    400044: tail002
-    400046: tail003
-    400048: tail1
-    7400000: CatIdle
-    7400002: CatWalk
-    7400004: CatWin
+    100000: b_ear
+    100002: b_ear(mirrored)
+    100004: b_oeil01
+    100006: b_oeil02
+    100008: b_patte_arriere01
+    100010: b_patte_arriere01(mirrored)
+    100012: b_patte_arriere02
+    100014: b_patte_arriere02(mirrored)
+    100016: b_patte_arriere03
+    100018: b_patte_arriere03(mirrored)
+    100020: b_patte_avant01
+    100022: b_patte_avant01(mirrored)
+    100024: b_patte_avant02
+    100026: b_patte_avant02(mirrored)
+    100028: b_patte_avant03
+    100030: b_patte_avant03(mirrored)
+    100032: b_spine01
+    100034: b_spine02
+    100036: b_spine03
+    100038: b_spine04
+    100040: b_tail01
+    100042: b_tail02
+    100044: b_tail03
+    100046: //RootNode
+    100048: default
+    100050: head
+    100052: master
+    100054: master001
+    100056: neck
+    100058: oiel009
+    100060: oiel010
+    100062: oiel011
+    100064: oiel03
+    100066: spine1
+    400000: b_ear
+    400002: b_ear(mirrored)
+    400004: b_oeil01
+    400006: b_oeil02
+    400008: b_patte_arriere01
+    400010: b_patte_arriere01(mirrored)
+    400012: b_patte_arriere02
+    400014: b_patte_arriere02(mirrored)
+    400016: b_patte_arriere03
+    400018: b_patte_arriere03(mirrored)
+    400020: b_patte_avant01
+    400022: b_patte_avant01(mirrored)
+    400024: b_patte_avant02
+    400026: b_patte_avant02(mirrored)
+    400028: b_patte_avant03
+    400030: b_patte_avant03(mirrored)
+    400032: b_spine01
+    400034: b_spine02
+    400036: b_spine03
+    400038: b_spine04
+    400040: b_tail01
+    400042: b_tail02
+    400044: b_tail03
+    400046: //RootNode
+    400048: default
+    400050: head
+    400052: master
+    400054: master001
+    400056: neck
+    400058: oiel009
+    400060: oiel010
+    400062: oiel011
+    400064: oiel03
+    400066: spine1
+    2100000: No Name
+    2100002: m_cat
+    2300000: oiel009
+    2300002: oiel010
+    2300004: oiel011
+    2300006: oiel03
+    3300000: oiel009
+    3300002: oiel010
+    3300004: oiel011
+    3300006: oiel03
+    4300000: oiel010
+    4300002: oiel011
+    4300004: oiel009
+    4300006: oiel03
+    4300008: default
+    7400000: Idle
+    7400002: Walk
+    7400004: Win
     9500000: //RootNode
+    13700000: default
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -86,7 +120,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: CatIdle
+      name: Idle
       takeName: Take 001
       firstFrame: 20
       lastFrame: 49
@@ -114,7 +148,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: CatWalk
+      name: Walk
       takeName: Take 001
       firstFrame: 60
       lastFrame: 91
@@ -142,7 +176,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: CatWin
+      name: Win
       takeName: Take 001
       firstFrame: 135
       lastFrame: 179

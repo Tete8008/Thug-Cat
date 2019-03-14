@@ -100,6 +100,8 @@ public class HumanBehaviour : MonoBehaviour
 
         startAngle = Random.Range(0, Mathf.PI * 2);
 
+        meshRenderer.material = HumanManager.instance.humanMaterials[Random.Range(0, HumanManager.instance.humanMaterials.Count)];
+
         actualRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x / 2 * TableBehaviour.instance.meshFilter.transform.localScale.x + distanceFromTable;
         self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle), 0, Mathf.Sin(startAngle)) * actualRadius;
         animator.SetBool("Moving", true);

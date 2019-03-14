@@ -7,6 +7,8 @@ public class HumanManager : Singleton<HumanManager>
     public List<GameObject> humanPrefabs;
     private List<HumanBehaviour> activeHumans;
 
+    public List<Material> humanMaterials;
+
     public int humanCount;
 
 

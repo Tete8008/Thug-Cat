@@ -21,6 +21,12 @@ public class GameManager : Singleton<GameManager>
 
     [NonSerialized] public bool gameFinished = false;
 
+    private float travelTime = 1;
+    private Vector3 cameraInitialPosition;
+    private Quaternion cameraInitialRotation;
+    private bool movingToCat = false;
+    private float currentTime;
+    
     
 
     [System.NonSerialized] public bool vibrationsEnabled=false;
@@ -28,6 +34,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        movingToCat = false;
         DontDestroyOnLoad(gameObject);
 
         Instantiate(catManagerPrefab,self);
@@ -45,6 +52,7 @@ public class GameManager : Singleton<GameManager>
 
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         SceneManager.LoadScene(sceneToLoad);
+        
     }
 
     private void OnApplicationQuit()
@@ -88,10 +96,11 @@ public class GameManager : Singleton<GameManager>
 
         if (victory)
         {
-            UIManager.instance.DisplayPanel(UIPanel.Win);
+            
             UIManager.instance.menu.ingameOverlay.SetActive(false);
             InputManager.instance.Enable(false);
             CatBehaviour.instance.animator.SetTrigger("LevelWon");
+            CameraGoToCat();
         }
         else
         {
@@ -171,8 +180,41 @@ public class GameManager : Singleton<GameManager>
         {
             GameOver(false);
         }
-
-
-
     }
+
+
+
+    public void CameraGoToCat()
+    {
+        cameraInitialPosition = Camera.main.transform.position;
+        currentTime = 0;
+        movingToCat = true;
+    }
+
+
+    private void Update()
+    {
+        if (!movingToCat) { return; }
+        currentTime += Time.deltaTime;
+        float percent = currentTime / travelTime;
+        if (percent < 1)
+        {
+            Camera.main.transform.position=Vector3.Lerp(cameraInitialPosition, CatBehaviour.instance.cameraSpot.position, percent);
+            Camera.main.transform.rotation=Quaternion.Lerp(cameraInitialRotation, CatBehaviour.instance.cameraSpot.rotation, percent);
+        }
+        else
+        {
+            Camera.main.transform.position = CatBehaviour.instance.cameraSpot.position;
+            Camera.main.transform.rotation = CatBehaviour.instance.cameraSpot.rotation;
+            movingToCat = false;
+            StartCoroutine(DisplayWinPanel());
+        }
+    }
+
+    private IEnumerator DisplayWinPanel()
+    {
+        yield return new WaitForSeconds(0.5f);
+        UIManager.instance.DisplayPanel(UIPanel.Win);
+    }
+
 }

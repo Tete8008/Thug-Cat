@@ -21,6 +21,8 @@ public class UIManager : Singleton<UIManager>
     {
         menu = Instantiate(canvasPrefab).GetComponent<MenuBehaviour>();
         tuto = Instantiate(tutoPrefab);
+        menu.GetComponent<Canvas>().worldCamera = Camera.main;
+        menu.GetComponent<Canvas>().planeDistance = 2;
         tuto.SetActive(false);
         menu.progressionSlider.maxValue = 1;
         menu.progressionSlider.minValue = 0;

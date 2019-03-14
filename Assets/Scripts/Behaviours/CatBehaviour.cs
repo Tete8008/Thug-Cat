@@ -8,6 +8,7 @@ public class CatBehaviour : Singleton<CatBehaviour>
     public Transform self;
     public Animator animator;
     public Image bubbleImage;
+    public Transform cameraSpot;
 
     /*public MeshFilter meshFilter;
     public MeshRenderer meshRenderer;*/

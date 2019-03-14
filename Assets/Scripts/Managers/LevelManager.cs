@@ -10,7 +10,7 @@ public class LevelManager : Singleton<LevelManager>
 
     public void LoadCurrentLevel()
     {
-        Level level = levels[currentLevel];
+        Level level = GetCurrentLevel();
         PropManager.instance.Init(level.propSpawnPointsData);
         HumanManager.instance.Init(level.hoomanLayers);
         CatManager.instance.Init();

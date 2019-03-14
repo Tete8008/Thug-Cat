@@ -43,8 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff2a6a10a43a734aa39385c1a2b6ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propSpawnPointsData: {fileID: 11400000, guid: 0cc55d10ed8078341bac9c773ad75129,
-    type: 2}
   propPrefabs:
-  - {fileID: 7384132315400989541, guid: 08ca8dac4709b1f49a84cb953a987bdf, type: 3}
-  - {fileID: 8699313177820994190, guid: 3b6a72751da1cf04088bc69ba9c73771, type: 3}
+  - {fileID: 659949649170433257, guid: 204662ce2466b394492151c27fdef7b1, type: 3}
+  - {fileID: 190665366526348499, guid: 9882fdcb82b5d9f4ab32a8d7f2f33c37, type: 3}
+  - {fileID: 808060619587587261, guid: 21be5f487c0181548a2e7105254380f4, type: 3}
+  - {fileID: 1460709713140407529, guid: 9cc778cf00bc0f742a55305a6d8c01cf, type: 3}
+  - {fileID: 5010890484498798408, guid: f06337aa077b30447871595f216d9ca8, type: 3}
+  - {fileID: 1980377779431445846, guid: 9899125bf1973624987fcd2e74c844d2, type: 3}
+  - {fileID: 8762979580263033223, guid: 7c2e901621210754a9fd9212c71b21cc, type: 3}
+  - {fileID: 447420857259930581, guid: 56a9998eea58b824486fed396c133b18, type: 3}
+  - {fileID: 6456552051899289813, guid: 22a29f5dc78ba9645b27f45f85675a56, type: 3}
+  - {fileID: 5668523738175601139, guid: 96a026215c56bd243bcc41d7f130beb5, type: 3}
+  - {fileID: 304634201390017952, guid: 039fe5829e080ad4392626905e9f37f0, type: 3}
+  - {fileID: 3142389193230402898, guid: b0a1bdea971df1345bb7e8a66c97b6fd, type: 3}
+  - {fileID: 4592230040930276059, guid: 569af0f01e48e8c4ea4c41db4f4a0d22, type: 3}
+  - {fileID: 1708947868713121476, guid: c9e8f0fb2d863324e8bdcac507594ad9, type: 3}
+  - {fileID: 3358305435596335680, guid: 4c4bd60ce65d2bf4f9c62f6a8f1c5dff, type: 3}
+  - {fileID: 4231517906214217245, guid: 9139783abc6254c4ea398723e022dbe5, type: 3}

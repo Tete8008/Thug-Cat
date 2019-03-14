@@ -90,7 +90,17 @@ ModelImporter:
     7400002: Walk
     9500000: //RootNode
     13700000: default
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 4cd6fc022ac1e6945bcff00084f1b0d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_cat
+    second: {fileID: 2100000, guid: 4cd6fc022ac1e6945bcff00084f1b0d8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

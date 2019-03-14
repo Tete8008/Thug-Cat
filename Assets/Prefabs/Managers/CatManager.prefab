@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catPrefab: {fileID: 2633245648661833294, guid: 98ff7b5f3ace8d8428da03cb48b991e5,
     type: 3}
-  catSpawnPosition: {x: 0, y: 4.827, z: 0}
+  catSpawnPosition: {x: 0, y: 4.827, z: 1.32}
   catSpawnRotation: {x: 0, y: 0, z: 0}
   bubbleSprites:
   - {fileID: 21300000, guid: c3b4901818c66064f85f2eaf8a78c118, type: 3}

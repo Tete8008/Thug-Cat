@@ -11,4 +11,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 24691bbd365a5354894e1c31b5307db6
+  - enabled: 1
+    path: Assets/Scenes/Game 2.unity
+    guid: 8971354cfb86aaa4d985decd88422125
+  - enabled: 1
+    path: Assets/Scenes/Game 3.unity
+    guid: 4171c38144c5da54caff8095fbc740e8
+  - enabled: 1
+    path: Assets/Scenes/Game 4.unity
+    guid: 2f5ceb1a53c6dec4aa4fc88f939e27db
+  - enabled: 1
+    path: Assets/Scenes/Game 5.unity
+    guid: 0abb279fe939ccb4fa68e93c38769d36
+  - enabled: 1
+    path: Assets/Scenes/Game 6.unity
+    guid: 4e156197cc2491c49a52e6eccd2b4064
+  - enabled: 1
+    path: Assets/Scenes/GameDwarves.unity
+    guid: 3806eae4ca8d96e49b26ebb718d136cb
+  - enabled: 1
+    path: Assets/Scenes/GameDwarves1.unity
+    guid: deb614301be5bc240be22dece94f87df
   m_configObjects: {}

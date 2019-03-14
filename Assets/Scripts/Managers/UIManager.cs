@@ -24,6 +24,7 @@ public class UIManager : Singleton<UIManager>
         tuto.SetActive(false);
         menu.progressionSlider.maxValue = 1;
         menu.progressionSlider.minValue = 0;
+        RefreshLevelText();
     }
 
     public void RefreshPropsPushedCount()
@@ -98,5 +99,10 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
+
+    public void RefreshLevelText()
+    {
+        menu.levelText.text = "Level "+(LevelManager.instance.currentLevel+1).ToString();
+    }
 
 }

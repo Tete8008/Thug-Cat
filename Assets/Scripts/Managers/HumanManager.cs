@@ -18,7 +18,11 @@ public class HumanManager : Singleton<HumanManager>
         {
             for (int i = 0; i < activeHumans.Count; i++)
             {
-                Destroy(activeHumans[i].gameObject);
+                if (activeHumans[i] != null)
+                {
+                    Destroy(activeHumans[i].gameObject);
+                }
+                
             }
         }
 

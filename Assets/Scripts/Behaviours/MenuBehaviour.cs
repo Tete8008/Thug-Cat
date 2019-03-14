@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class MenuBehaviour : Singleton<MenuBehaviour>
 {
-    public TextMeshProUGUI propsPushedText;
-    public TextMeshProUGUI propsCatchedText;
     public GameObject losePanel;
 
     public GameObject winPanel;
@@ -17,6 +15,8 @@ public class MenuBehaviour : Singleton<MenuBehaviour>
     public GameObject ingameOverlay;
     public GameObject skinSelectionPanel;
     public Slider progressionSlider;
+
+    public TextMeshProUGUI levelText;
 
 
     public Button vibrationsButton;

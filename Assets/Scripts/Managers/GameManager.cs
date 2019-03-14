@@ -38,7 +38,7 @@ public class GameManager : Singleton<GameManager>
         Instantiate(levelManagerPrefab, self);
         Instantiate(skinSelectionPrefab, self);
 
-        //LevelManager.instance.currentLevel = PlayerPrefs.GetInt("level");
+        LevelManager.instance.currentLevel = PlayerPrefs.GetInt("level");
         vibrationsEnabled = PlayerPrefs.GetInt("vibrations")==0?true:false;
 
 
@@ -156,12 +156,13 @@ public class GameManager : Singleton<GameManager>
     {
         float propsNumber = LevelManager.instance.GetCurrentLevel().propSpawnPointsData.propSpawnPositions.Count;
         float destructionPercentRequired = (LevelManager.instance.GetCurrentLevel().destructionPercentageRequired / 100);
+        print("percent of objective : " + PropManager.instance.propsPushed / propsNumber);
 
         if (PropManager.instance.propsCatched / propsNumber > 1 - destructionPercentRequired)
         {
             GameOver(false);
         }
-        else if (PropManager.instance.propsPushed / propsNumber > destructionPercentRequired)
+        else if (PropManager.instance.propsPushed / propsNumber >= destructionPercentRequired)
         {
             GameOver(true);
         }

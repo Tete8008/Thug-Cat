@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dbb21afb9b73fb14d9e4df10b5172f0a, type: 2}
   propSpawnPointsData: {fileID: 11400000, guid: 0cc55d10ed8078341bac9c773ad75129,
     type: 2}
-  destructionPercentageRequired: 50
-  sceneName: Game
+  destructionPercentageRequired: 85
+  sceneName: GameDwarves1

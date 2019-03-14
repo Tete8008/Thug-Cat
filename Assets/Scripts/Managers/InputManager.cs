@@ -22,6 +22,7 @@ public class InputManager : Singleton<InputManager>
     public void Enable(bool on)
     {
         active = on;
+        isTouching = false;
     }
 
     public void ToggleMode(InputMode inputMode)

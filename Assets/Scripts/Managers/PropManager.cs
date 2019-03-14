@@ -25,7 +25,10 @@ public class PropManager : Singleton<PropManager>
         {
             for (int i = 0; i < activeProps.Count; i++)
             {
-                Destroy(activeProps[i].gameObject);
+                if (activeProps[i] != null)
+                {
+                    Destroy(activeProps[i].gameObject);
+                }
             }
         }
 

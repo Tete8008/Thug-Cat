@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c9b204c6e5c01e42ab3d27bddc77e0f, type: 2}
   propSpawnPointsData: {fileID: 11400000, guid: 0cc55d10ed8078341bac9c773ad75129,
     type: 2}
-  destructionPercentageRequired: 50
+  destructionPercentageRequired: 55
   sceneName: Game 2

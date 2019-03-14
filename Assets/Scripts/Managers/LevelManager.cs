@@ -16,6 +16,7 @@ public class LevelManager : Singleton<LevelManager>
         if (SceneManager.GetActiveScene().name != level.sceneName)
         {
             SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+            InputManager.instance.Enable(false);
             SceneManager.LoadScene(level.sceneName);
         }
         else
@@ -27,8 +28,8 @@ public class LevelManager : Singleton<LevelManager>
             GameManager.instance.gameFinished = false;
         }
 
-        
 
+        UIManager.instance.RefreshLevelText();
         
 
     }
@@ -37,6 +38,9 @@ public class LevelManager : Singleton<LevelManager>
     {
         SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
         LoadCurrentLevel();
+        UIManager.instance.Init();
+        UIManager.instance.menu.mainMenuPanel.SetActive(false);
+        UIManager.instance.DisplayPanel(UIPanel.IngameOverlay);
     }
 
     public Level GetCurrentLevel()
@@ -54,5 +58,6 @@ public class LevelManager : Singleton<LevelManager>
         {
             currentLevel = 0;
         }
+        UIManager.instance.RefreshLevelText();
     }
 }

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3904585200871797792}
   - component: {fileID: 3904585200868373510}
   - component: {fileID: 3904585200869373638}
+  - component: {fileID: 3527046011209326125}
+  - component: {fileID: 7287330352389568276}
   m_Layer: 0
   m_Name: Teapot001_Part_2
   m_TagString: Untagged
@@ -77,6 +79,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &3527046011209326125
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565312}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7287330352389568276
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: e519b30854df33841abe6639be3602f5, type: 3}
 --- !u!1 &3904585200871565314
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +120,8 @@ GameObject:
   - component: {fileID: 3904585200871797794}
   - component: {fileID: 3904585200868373504}
   - component: {fileID: 3904585200869373632}
+  - component: {fileID: 5969855949161197418}
+  - component: {fileID: 9096900770174209384}
   m_Layer: 0
   m_Name: Teapot001_Part_3
   m_TagString: Untagged
@@ -154,6 +188,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &5969855949161197418
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565314}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &9096900770174209384
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300004, guid: e519b30854df33841abe6639be3602f5, type: 3}
 --- !u!1 &3904585200871565316
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +265,8 @@ GameObject:
   - component: {fileID: 3904585200871797798}
   - component: {fileID: 3904585200868373508}
   - component: {fileID: 3904585200869373636}
+  - component: {fileID: 3394938304398451802}
+  - component: {fileID: 9027585238329485413}
   m_Layer: 0
   m_Name: Teapot001_Part_1
   m_TagString: Untagged
@@ -267,6 +333,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &3394938304398451802
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565318}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &9027585238329485413
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: e519b30854df33841abe6639be3602f5, type: 3}
 --- !u!1 &3904585200871565320
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +374,8 @@ GameObject:
   - component: {fileID: 3904585200871797800}
   - component: {fileID: 3904585200868373518}
   - component: {fileID: 3904585200869373646}
+  - component: {fileID: 4594777009198260720}
+  - component: {fileID: 1512281675303953234}
   m_Layer: 0
   m_Name: Teapot001_Part_6
   m_TagString: Untagged
@@ -344,6 +442,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &4594777009198260720
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565320}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1512281675303953234
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300010, guid: e519b30854df33841abe6639be3602f5, type: 3}
 --- !u!1 &3904585200871565324
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +483,8 @@ GameObject:
   - component: {fileID: 3904585200871797804}
   - component: {fileID: 3904585200868373506}
   - component: {fileID: 3904585200869373634}
+  - component: {fileID: 2285211345203745899}
+  - component: {fileID: 5501710806060152805}
   m_Layer: 0
   m_Name: Teapot001_Part_4
   m_TagString: Untagged
@@ -421,6 +551,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &2285211345203745899
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565324}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5501710806060152805
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300006, guid: e519b30854df33841abe6639be3602f5, type: 3}
 --- !u!1 &3904585200871565326
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +592,8 @@ GameObject:
   - component: {fileID: 3904585200871797806}
   - component: {fileID: 3904585200868373516}
   - component: {fileID: 3904585200869373644}
+  - component: {fileID: 4613475747685214784}
+  - component: {fileID: 3729179074076254458}
   m_Layer: 0
   m_Name: Teapot001_Part_5
   m_TagString: Untagged
@@ -498,3 +660,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &4613475747685214784
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565326}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3729179074076254458
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904585200871565326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300008, guid: e519b30854df33841abe6639be3602f5, type: 3}

@@ -17,6 +17,8 @@ public class MenuBehaviour : Singleton<MenuBehaviour>
     public GameObject ingameOverlay;
     public GameObject skinSelection;
     public GameObject skinSelectionPanel;
+    public GameObject tuto;
+
 
     public Button vibrationsButton;
 
@@ -24,7 +26,7 @@ public class MenuBehaviour : Singleton<MenuBehaviour>
 
 
     private bool optionsOpen;
-    private bool paused;
+    [System.NonSerialized] public  bool paused;
     private bool vibrationsEnabled;
 
 
@@ -97,6 +99,7 @@ public class MenuBehaviour : Singleton<MenuBehaviour>
 
     public void InitSkins()
     {
+        print(CatManager.instance.selectedCatMaterial);
         for (int i = 0; i < catSkins.Count; i++)
         {
             if (CatManager.instance.selectedCatMaterial == catSkins[i].material)

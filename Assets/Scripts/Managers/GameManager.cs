@@ -139,6 +139,10 @@ public class GameManager : Singleton<GameManager>
     public void GoBackToMenu()
     {
         UIManager.instance.HideActivePanel();
+        Time.timeScale = 1;
+        UIManager.instance.menu.paused = false;
+        HumanManager.instance.StopHumans();
+        CatBehaviour.instance.animator.SetBool("IsMoving", false);
         UIManager.instance.menu.winPanel.SetActive(false);
         UIManager.instance.menu.losePanel.SetActive(false);
         UIManager.instance.menu.pausePanel.SetActive(false);

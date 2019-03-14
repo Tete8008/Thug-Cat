@@ -36,7 +36,9 @@ public class CatBehaviour : Singleton<CatBehaviour>
 
     public void Move(Vector3 velocity)
     {
+        
         velocity *= currentSpeed;
+        animator.SetFloat("Speed", velocity.magnitude*40);
         self.Translate(velocity);
         Vector2 direction = new Vector2(TableBehaviour.instance.self.position.x, TableBehaviour.instance.self.position.z) - new Vector2(self.position.x, self.position.z);
         float angle = Vector2.SignedAngle(new Vector2(velocity.x,velocity.z), Vector2.up)+180;

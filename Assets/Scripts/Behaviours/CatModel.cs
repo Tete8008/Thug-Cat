@@ -28,7 +28,6 @@ public class CatModel : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        print(collision.collider.tag);
         if (collision.collider.CompareTag("Prop"))
         {
             colliding = true;

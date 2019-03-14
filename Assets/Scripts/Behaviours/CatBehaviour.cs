@@ -25,6 +25,7 @@ public class CatBehaviour : Singleton<CatBehaviour>
         tableRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x / 2 * TableBehaviour.instance.meshFilter.transform.localScale.x;
         catHeight = self.position.y-TableBehaviour.instance.self.position.y;
         currentSpeed = maxMoveSpeed;
+        skinnedMeshRenderer.material = CatManager.instance.selectedCatMaterial;
     }
 
     public void PushProp()

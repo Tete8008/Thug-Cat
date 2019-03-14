@@ -87,10 +87,6 @@ public class PropManager : Singleton<PropManager>
         
         GameObject fragments=Instantiate(prop.brokenProp,prop.self.position,prop.self.rotation);
         fragments.transform.localScale = prop.self.localScale;
-        for (int i = 0; i < fragments.transform.childCount; i++)
-        {
-            fragments.transform.GetChild(i).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0, 1), Random.Range(0, 1), Random.Range(0, 1))*100,ForceMode.Impulse);
-        }
         activeFragments.Add(fragments);
 
         Destroy(prop.gameObject);

@@ -47,3 +47,4 @@ MonoBehaviour:
     type: 3}
   catSpawnPosition: {x: 0, y: 4.827, z: 0}
   catSpawnRotation: {x: 0, y: 0, z: 0}
+  selectedCatMaterial: {fileID: 2100000, guid: 4cd6fc022ac1e6945bcff00084f1b0d8, type: 2}

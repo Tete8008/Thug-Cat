@@ -20,6 +20,7 @@ public class GameManager : Singleton<GameManager>
 
     [NonSerialized] public bool gameFinished = false;
 
+    
 
     [System.NonSerialized] public bool vibrationsEnabled=false;
 

@@ -12,6 +12,10 @@ public class CatManager : Singleton<CatManager>
 
     [System.NonSerialized] public CatBehaviour cat;
 
+    public Material selectedCatMaterial;
+
+    
+
 
     public void Init()
     {
@@ -27,4 +31,8 @@ public class CatManager : Singleton<CatManager>
         cat = Instantiate(catPrefab,catSpawnPosition,Quaternion.Euler(catSpawnRotation)).GetComponent<CatBehaviour>();
         cat.Init();
     }
+
+
+
+    
 }

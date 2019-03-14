@@ -53,6 +53,10 @@ public class UIManager : Singleton<UIManager>
                 break;
             case UIPanel.SkinSelection:
                 activePanel = menu.skinSelectionPanel;
+                menu.skinSelection.SetActive(true);
+                InputManager.instance.Enable(true);
+                InputManager.instance.ToggleMode(InputMode.SkinSelection);
+                MenuBehaviour.instance.InitSkins();
                 break;
         }
 

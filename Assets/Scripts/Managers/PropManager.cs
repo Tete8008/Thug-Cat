@@ -75,9 +75,7 @@ public class PropManager : Singleton<PropManager>
 
     public void PushActiveObject()
     {
-        
         CatManager.instance.cat.PushProp();
-        
     }
 
 
@@ -89,6 +87,13 @@ public class PropManager : Singleton<PropManager>
         
         GameObject fragments=Instantiate(prop.brokenProp,prop.self.position,prop.self.rotation);
         fragments.transform.localScale = prop.self.localScale;
+
+        /*for (int i = 0; i < fragments.transform.childCount; i++)
+        {
+
+            fragments.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0, 1), Random.Range(0, 1), Random.Range(0, 1)) * 1000);
+        }*/
+
         activeFragments.Add(fragments);
         GameObject go=Instantiate(collapseFx,prop.self.position,prop.self.rotation);
         StartCoroutine(DestroyFx(go));
@@ -100,6 +105,6 @@ public class PropManager : Singleton<PropManager>
     private IEnumerator DestroyFx(GameObject fx)
     {
         yield return new WaitForSeconds(1);
-        //Destroy(fx);
+        Destroy(fx);
     }
 }

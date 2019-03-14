@@ -89,6 +89,7 @@ public class GameManager : Singleton<GameManager>
             UIManager.instance.DisplayPanel(UIPanel.Win);
             UIManager.instance.menu.ingameOverlay.SetActive(false);
             InputManager.instance.Enable(false);
+            CatBehaviour.instance.animator.SetTrigger("LevelWon");
         }
         else
         {

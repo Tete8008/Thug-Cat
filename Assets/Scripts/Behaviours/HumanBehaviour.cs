@@ -9,6 +9,8 @@ public class HumanBehaviour : MonoBehaviour
     public Animator animator;
 
     public float moveSpeed;
+
+    public Transform headSocket;
     private float startAngle;
 
     private float actualRadius;
@@ -20,6 +22,8 @@ public class HumanBehaviour : MonoBehaviour
     private float distanceTravelled;
     private float time;
     private bool walking = true;
+
+    private List<PropBehaviour> propsAttachedToHead;
 
 
 
@@ -84,12 +88,24 @@ public class HumanBehaviour : MonoBehaviour
 
     public void Init(float distanceFromTable)
     {
+        if (propsAttachedToHead != null)
+        {
+            for (int i = 0; i < propsAttachedToHead.Count; i++)
+            {
+                Destroy(propsAttachedToHead[i].gameObject);
+            }
+        }
+
+        propsAttachedToHead = new List<PropBehaviour>();
+
         startAngle = Random.Range(0, Mathf.PI * 2);
 
         actualRadius = TableBehaviour.instance.meshFilter.sharedMesh.bounds.size.x / 2 * TableBehaviour.instance.meshFilter.transform.localScale.x + distanceFromTable;
         self.position = TableBehaviour.instance.self.position + new Vector3(Mathf.Cos(startAngle), 0, Mathf.Sin(startAngle)) * actualRadius;
         animator.SetBool("Moving", true);
         walking = true;
+
+        
     }
 
 
@@ -190,14 +206,43 @@ public class HumanBehaviour : MonoBehaviour
     {
         //play catch anim
         //ReputPropOnTable(prop);
+
+        if (propsAttachedToHead.Contains(prop))
+        {
+            return;
+        }
+
+        print("prop catched");
+        
+        prop.self.parent=headSocket;
+        
+        prop.self.localEulerAngles =new Vector3(-180,0,0);
+        prop.self.localPosition = new Vector3(0, 0, -GetHeadPileHeight());
+        prop.rigidBody.useGravity = false;
+        prop.rigidBody.velocity = Vector3.zero;
+        prop.rigidBody.angularVelocity = Vector3.zero;
+        propsAttachedToHead.Add(prop);
         PropManager.instance.activeProps.Remove(prop);
-        Destroy(prop.gameObject);
+        Debug.Log("zbeub",propsAttachedToHead[0].gameObject);
         PropManager.instance.propsCatched++;
+        
         UIManager.instance.RefreshPropsCatchedCount();
         GameManager.instance.CheckGameOver();
-
-
     }
+
+
+    private float GetHeadPileHeight()
+    {
+        float height = 0;
+        for (int i = 0; i < propsAttachedToHead.Count; i++)
+        {
+            height += propsAttachedToHead[i].meshRenderer.bounds.size.y * propsAttachedToHead[i].self.localScale.y/2;
+        }
+        print(height);
+        return height;
+    }
+
+
 
 
     private void ReputPropOnTable(PropBehaviour prop)

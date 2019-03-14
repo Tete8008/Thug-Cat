@@ -26,10 +26,41 @@ Transform:
   m_LocalRotation: {x: 0.013815096, y: 0.7069718, z: 0.0138151795, w: 0.7069718}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.386593, y: 0.386593, z: 0.386593}
-  m_Children: []
+  m_Children:
+  - {fileID: 339799096313744643}
   m_Father: {fileID: 6450547380379585053}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5192801628914360249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339799096313744643}
+  m_Layer: 0
+  m_Name: HeadSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &339799096313744643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5192801628914360249}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1.161, y: 0.037, z: 0.006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8397968418878219686}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &5837265555559645557
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +243,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 3714883770008014390}
   animator: {fileID: 1490174552866382477}
   moveSpeed: 2
+  headSocket: {fileID: 339799096313744643}
 --- !u!136 &5862048591032378609
 CapsuleCollider:
   m_ObjectHideFlags: 0

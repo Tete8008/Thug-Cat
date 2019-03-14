@@ -40,6 +40,7 @@ public class InputManager : Singleton<InputManager>
                     initialPosition = Input.mousePosition;
                     isTouching = true;
                     CatBehaviour.instance.animator.SetBool("IsMoving", true);
+                    UIManager.instance.menu.tuto.SetActive(false);
                 }
 
                 if (Input.GetMouseButtonUp(0))
